@@ -142,7 +142,7 @@ public class HospitalController implements Initializable {
                     Parent root = FXMLLoader.load(getClass().getResource("AdminMainForm-view.fxml"));
                     Stage stage = new Stage();
                     stage.setScene(new Scene(root));
-                    stage.setTitle("Portal do Admoinistardor");
+                    stage.setTitle("Portal do Administardor");
                     stage.show();
                     login_form.getScene().getWindow().hide();
                 } catch (IOException e) {
