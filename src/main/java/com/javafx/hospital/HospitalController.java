@@ -33,8 +33,6 @@ public class HospitalController implements Initializable {
     @FXML
     private BorderPane login_form;
 
-    @FXML
-    private Hyperlink login_inscreverAqui;
 
     @FXML
     private Button login_loginBtn;
@@ -139,7 +137,17 @@ public class HospitalController implements Initializable {
 
             if (resultSet.next()) {
                 //foi correta imitra uma alerta
-                alertMessage.successMessage("Login com Sucesso");
+                //alertMessage.successMessage("Login com Sucesso");
+                try {
+                    Parent root = FXMLLoader.load(getClass().getResource("AdminMainForm-view.fxml"));
+                    Stage stage = new Stage();
+                    stage.setScene(new Scene(root));
+                    stage.setTitle("Portal do Admoinistardor");
+                    stage.show();
+                    login_form.getScene().getWindow().hide();
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
             } else {
                 alertMessage.errorMessage("Nome do usuario ou palavara passe incorreta"); // Se imitira um alerta
             }
