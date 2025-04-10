@@ -4,6 +4,7 @@
 
 .radius{
     -fx-background-radius: 6px;
+    -fx-border-radius: 6px;
 }
 
 .leftAnchor{
@@ -63,11 +64,7 @@
     -fx-background-color: linear-gradient(to bottom left, #E53935 ,#FF0000);
 }
 
-.btn-2.font{
-    -fx-fill: #ff0000;
-}
-
-.btn-1 .font{
+.font{
     -fx-fill: #2A5CAA;
 }
 
