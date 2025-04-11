@@ -64,7 +64,25 @@
     -fx-background-color: linear-gradient(to bottom left, #E53935 ,#FF0000);
 }
 
+
+.ba-color-1{
+    -fx-background-color: linear-gradient(to bottom right, #2A5CAA,#4B8DF8);
+}
+
+.ba-color-2{
+    -fx-background-color: #E53935;
+}
+
 .font{
     -fx-fill: #2A5CAA;
 }
 
+
+.border{
+    -fx-border-color: #2A5CAA;
+    -fx-border-width: .8px;
+}
+
+.shadow{
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 5,0,0,0);
+}

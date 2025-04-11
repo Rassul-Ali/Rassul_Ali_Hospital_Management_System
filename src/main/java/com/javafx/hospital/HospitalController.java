@@ -81,6 +81,8 @@ public class HospitalController implements Initializable {
     private AlertMessage alertMessage = new AlertMessage();
     private Users users = new Users();
 
+    protected static String login_name;
+
     public void addUsers() {
         List<String> list = new ArrayList<>();
         for (String lisd : Users.users) {
@@ -101,7 +103,7 @@ public class HospitalController implements Initializable {
             stage.setTitle("Alpha3 Login do Administrador");
             stage.show();
 
-        } else if (login_comboBox.getSelectionModel().getSelectedItem().equals("Doctor")) {
+        } else if (login_comboBox.getSelectionModel().getSelectedItem().equals("Medico")) {
             Parent root = FXMLLoader.load(getClass().getResource("Doctor-view.fxml"));
             Stage stage = new Stage();
             stage.setScene(new Scene(root));
@@ -136,8 +138,7 @@ public class HospitalController implements Initializable {
             resultSet = preparedStatement.executeQuery();
 
             if (resultSet.next()) {
-                //foi correta imitra uma alerta
-                //alertMessage.successMessage("Login com Sucesso");
+                login_name = resultSet.getString("FIRST_NAME") +" "+ resultSet.getString("LAST_NAME");
                 try {
                     Parent root = FXMLLoader.load(getClass().getResource("AdminMainForm-view.fxml"));
                     Stage stage = new Stage();

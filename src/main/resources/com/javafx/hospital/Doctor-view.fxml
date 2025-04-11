@@ -45,7 +45,7 @@
                                     <Font size="15.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="428.0" layoutY="12.0" styleClass="topPaneText" stylesheets="@Styles/login.css" text="Doctor">
+                              <Label layoutX="415.0" layoutY="12.0" styleClass="topPaneText" stylesheets="@Styles/login.css" text="Medico">
                                  <font>
                                     <Font size="15.0" />
                                  </font>

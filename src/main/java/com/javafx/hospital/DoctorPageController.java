@@ -64,7 +64,7 @@ public class DoctorPageController implements Initializable {
         }
         ObservableList listdata = FXCollections.observableList(list);
         login_comboBox.setItems(listdata);
-        login_comboBox.getSelectionModel().select(list.indexOf("Doctor"));
+        login_comboBox.getSelectionModel().select(list.indexOf("Medico"));
     }
 
     public void switchPge() throws IOException {
@@ -76,12 +76,12 @@ public class DoctorPageController implements Initializable {
             stage.setTitle("Alpha3 Login do Administrador");
             stage.show();
 
-        } else if (login_comboBox.getSelectionModel().getSelectedItem().equals("Doctor")) {
+        } else if (login_comboBox.getSelectionModel().getSelectedItem().equals("Medico")) {
             Parent root = FXMLLoader.load(getClass().getResource("Doctor-view.fxml"));
             Stage stage = new Stage();
             stage.setScene(new Scene(root));
             stage.setResizable(false);
-            stage.setTitle("Alpha3 Login do Doctor");
+            stage.setTitle("Alpha3 Login do Medico");
             stage.show();
         }
         login_form.getScene().getWindow().hide();
