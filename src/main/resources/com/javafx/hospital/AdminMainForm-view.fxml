@@ -22,7 +22,7 @@
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="topPane" stylesheets="@Styles/AdminMainForm.css" BorderPane.alignment="CENTER">
                      <children>
                         <FontAwesomeIconView fill="#2a5caa" glyphName="HOSPITAL_ALT" layoutX="70.0" layoutY="81.0" size="6em" />
-                        <Button fx:id="admin_dashboard" alignment="TOP_LEFT" layoutX="21.0" layoutY="251.0" maxWidth="45.0" mnemonicParsing="false" prefHeight="40.0" stylesheets="@Styles/AdminMainForm.css" text="Dashboard" AnchorPane.leftAnchor="21.0" AnchorPane.rightAnchor="19.0" AnchorPane.topAnchor="251.0">
+                        <Button fx:id="admin_dashboard" alignment="TOP_LEFT" layoutX="21.0" layoutY="239.0" maxWidth="45.0" mnemonicParsing="false" prefHeight="40.0" stylesheets="@Styles/AdminMainForm.css" text="Dashboard" AnchorPane.leftAnchor="21.0" AnchorPane.rightAnchor="19.0" AnchorPane.topAnchor="239.0">
                            <graphic>
                               <FontAwesomeIconView glyphName="CUBE" size="2.5em" styleClass="font" />
                            </graphic>
@@ -37,7 +37,7 @@
                               <String fx:value="radius" />
                            </styleClass>
                         </Button>
-                        <Button fx:id="admin_medicos" alignment="TOP_LEFT" layoutX="20.0" layoutY="334.0" mnemonicParsing="false" prefHeight="40.0" stylesheets="@Styles/AdminMainForm.css" text="Medicos" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="334.0">
+                        <Button fx:id="admin_medicos" alignment="TOP_LEFT" layoutX="20.0" layoutY="314.0" mnemonicParsing="false" prefHeight="40.0" stylesheets="@Styles/AdminMainForm.css" text="Medicos" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="314.0">
                            <graphic>
                               <FontAwesomeIconView glyphName="USER_MD" size="2.5em" styleClass="font" />
                            </graphic>
@@ -49,7 +49,7 @@
                               <String fx:value="radius" />
                            </styleClass>
                         </Button>
-                        <Button fx:id="admin_pacientes" alignment="TOP_LEFT" layoutX="20.0" layoutY="418.0" mnemonicParsing="false" prefHeight="40.0" stylesheets="@Styles/AdminMainForm.css" text="Pacientes" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="418.0">
+                        <Button fx:id="admin_pacientes" alignment="TOP_LEFT" layoutX="20.0" layoutY="390.0" mnemonicParsing="false" prefHeight="40.0" stylesheets="@Styles/AdminMainForm.css" text="Pacientes" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="390.0">
                            <graphic>
                               <FontAwesomeIconView glyphName="USER" size="2.5em" styleClass="font" />
                            </graphic>
@@ -61,7 +61,7 @@
                               <String fx:value="radius" />
                            </styleClass>
                         </Button>
-                        <Button fx:id="admin_reg_medicos" alignment="TOP_LEFT" layoutX="20.0" layoutY="498.0" mnemonicParsing="false" prefHeight="40.0" stylesheets="@Styles/AdminMainForm.css" text="Reg. Medico" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="498.0">
+                        <Button fx:id="admin_reg_medicos" alignment="TOP_LEFT" layoutX="20.0" layoutY="468.0" mnemonicParsing="false" prefHeight="40.0" stylesheets="@Styles/AdminMainForm.css" text="Reg. Medico" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="468.0">
                            <graphic>
                               <FontAwesomeIconView glyphName="USER_PLUS" size="2.5em" styleClass="font" />
                            </graphic>
@@ -73,7 +73,7 @@
                               <String fx:value="radius" />
                            </styleClass>
                         </Button>
-                        <Button fx:id="admin_definicoes" alignment="TOP_LEFT" layoutX="20.0" layoutY="572.0" mnemonicParsing="false" prefHeight="40.0" stylesheets="@Styles/AdminMainForm.css" text="Estagiario" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="572.0">
+                        <Button fx:id="admin_definicoes" alignment="TOP_LEFT" layoutX="20.0" layoutY="547.0" mnemonicParsing="false" prefHeight="40.0" stylesheets="@Styles/AdminMainForm.css" text="Estagiarios" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="547.0">
                            <graphic>
                               <FontAwesomeIconView glyphName="USER_MD" size="2.5em" styleClass="font" />
                            </graphic>
@@ -85,7 +85,7 @@
                               <String fx:value="radius" />
                            </styleClass>
                         </Button>
-                        <Button fx:id="admin_definicoes2" alignment="TOP_LEFT" layoutX="20.0" layoutY="646.0" mnemonicParsing="false" prefHeight="40.0" stylesheets="@Styles/AdminMainForm.css" text="Reg. Estagiario" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
+                        <Button fx:id="admin_definicoes2" alignment="TOP_LEFT" layoutX="20.0" layoutY="615.0" mnemonicParsing="false" prefHeight="40.0" stylesheets="@Styles/AdminMainForm.css" text="Reg. Estagiario" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
                            <graphic>
                               <FontAwesomeIconView glyphName="USER_PLUS" size="2.5em" styleClass="font" />
                            </graphic>
@@ -97,7 +97,7 @@
                               <String fx:value="radius" />
                            </styleClass>
                         </Button>
-                        <Button fx:id="admin_definicoes1" alignment="TOP_LEFT" layoutX="20.0" layoutY="723.0" mnemonicParsing="false" prefHeight="40.0" stylesheets="@Styles/AdminMainForm.css" text="Conta" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
+                        <Button fx:id="admin_definicoes1" alignment="TOP_LEFT" layoutX="21.0" layoutY="746.0" mnemonicParsing="false" prefHeight="40.0" stylesheets="@Styles/AdminMainForm.css" text="Conta" AnchorPane.leftAnchor="21.0" AnchorPane.rightAnchor="19.0">
                            <graphic>
                               <FontAwesomeIconView glyphName="GEAR" size="2.5em" styleClass="font" />
                            </graphic>
@@ -126,6 +126,18 @@
                               <Font name="System Bold" size="14.0" />
                            </font>
                         </Label>
+                        <Button fx:id="admin_definicoes21" alignment="TOP_LEFT" layoutX="17.0" layoutY="686.0" mnemonicParsing="false" prefHeight="40.0" stylesheets="@Styles/AdminMainForm.css" text="Relatorios" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
+                           <graphic>
+                              <FontAwesomeIconView glyphName="FILES_ALT" size="2.5em" styleClass="font" />
+                           </graphic>
+                           <padding>
+                              <Insets bottom="5.0" left="7.0" top="5.0" />
+                           </padding>
+                           <styleClass>
+                              <String fx:value="btn-1" />
+                              <String fx:value="radius" />
+                           </styleClass>
+                        </Button>
                      </children>
                   </AnchorPane>
                </left>
@@ -207,7 +219,7 @@
                                                       <Font size="18.0" />
                                                    </font>
                                                 </Label>
-                                                <Label layoutX="107.0" layoutY="165.0" text="Paciente Internados" textFill="WHITE">
+                                                <Label layoutX="96.0" layoutY="165.0" text="Pacientes Internados" textFill="WHITE">
                                                    <font>
                                                       <Font name="System Bold" size="18.0" />
                                                    </font>
