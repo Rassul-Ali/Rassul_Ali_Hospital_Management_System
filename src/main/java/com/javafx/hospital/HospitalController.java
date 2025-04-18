@@ -20,6 +20,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class HospitalController implements Initializable {
@@ -140,7 +141,7 @@ public class HospitalController implements Initializable {
             if (resultSet.next()) {
                 login_name = resultSet.getString("FIRST_NAME") +" "+ resultSet.getString("LAST_NAME");
                 try {
-                    Parent root = FXMLLoader.load(getClass().getResource("AdminMainForm-view.fxml"));
+                    Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("AdminMainForm-view.fxml")));
                     Stage stage = new Stage();
                     stage.setScene(new Scene(root));
                     stage.setTitle("Portal do Administardor");
