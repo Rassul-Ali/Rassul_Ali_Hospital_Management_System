@@ -169,7 +169,7 @@
                                                             </styleClass>
                                                             <children>
                                                                 <FontAwesomeIconView fill="WHITE" glyphName="USER_MD" layoutX="14.0" layoutY="133.0" size="7em" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="15.0" />
-                                                                <Label layoutX="263.0" layoutY="14.0" text="0" textFill="WHITE">
+                                                                <Label fx:id="admin_total_medicos" layoutX="263.0" layoutY="14.0" text="0" textFill="WHITE">
                                                                     <font>
                                                                         <Font size="18.0" />
                                                                     </font>
@@ -191,7 +191,7 @@
                                                             </styleClass>
                                                             <children>
                                                                 <FontAwesomeIconView fill="WHITE" glyphName="USER" layoutX="14.0" layoutY="133.0" size="7em" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="15.0" />
-                                                                <Label layoutX="263.0" layoutY="14.0" text="0" textFill="WHITE">
+                                                                <Label fx:id="admin_total_pacientes" layoutX="263.0" layoutY="14.0" text="0" textFill="WHITE">
                                                                     <font>
                                                                         <Font size="18.0" />
                                                                     </font>
@@ -213,7 +213,7 @@
                                                             </styleClass>
                                                             <children>
                                                                 <FontAwesomeIconView fill="WHITE" glyphName="BED" layoutX="14.0" layoutY="133.0" size="7em" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="15.0" />
-                                                                <Label layoutX="263.0" layoutY="14.0" text="0" textFill="WHITE">
+                                                                <Label fx:id="admin_total_paci_internado" layoutX="263.0" layoutY="14.0" text="0" textFill="WHITE">
                                                                     <font>
                                                                         <Font size="18.0" />
                                                                     </font>
@@ -235,7 +235,7 @@
                                                             </styleClass>
                                                             <children>
                                                                 <FontAwesomeIconView fill="WHITE" glyphName="USERS" layoutX="14.0" layoutY="133.0" size="7em" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="15.0" />
-                                                                <Label layoutX="263.0" layoutY="14.0" text="0" textFill="WHITE">
+                                                                <Label fx:id="admin_total_paci_falecidos" layoutX="263.0" layoutY="14.0" text="0" textFill="WHITE">
                                                                     <font>
                                                                         <Font size="18.0" />
                                                                     </font>
@@ -272,14 +272,14 @@
                                     <children>
                                         <AnchorPane layoutX="4.0" layoutY="4.0" AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="3.0" AnchorPane.topAnchor="3.0">
                                             <children>
-                                                <TableView AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="30.0">
+                                                <TableView fx:id="admin_interna_semanal" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="30.0">
                                                     <columns>
-                                                        <TableColumn prefWidth="196.0" text="Nome do Paciente" />
-                                                        <TableColumn prefWidth="167.0" text="Doenca" />
-                                                        <TableColumn prefWidth="155.0" text="Medico" />
-                                                        <TableColumn prefWidth="71.0" text="Idade" />
-                                                        <TableColumn minWidth="0.0" prefWidth="90.0" text="Sexo" />
-                                                        <TableColumn prefWidth="88.0" text="Quarto" />
+                                                        <TableColumn fx:id="admin_interna_semanal_nomePa" prefWidth="196.0" text="Nome do Paciente" />
+                                                        <TableColumn fx:id="admin_interna_semanal_doenca" prefWidth="167.0" text="Doenca" />
+                                                        <TableColumn fx:id="admin_interna_semanal_Medico" prefWidth="155.0" text="Medico" />
+                                                        <TableColumn fx:id="admin_interna_semanal_idade" prefWidth="71.0" text="Idade" />
+                                                        <TableColumn fx:id="admin_interna_semanal_sexo" minWidth="0.0" prefWidth="90.0" text="Sexo" />
+                                                        <TableColumn fx:id="admin_interna_semanal_quarto" prefWidth="88.0" text="Quarto" />
                                                     </columns>
                                                     <rotationAxis>
                                                         <Point3D />
@@ -294,7 +294,7 @@
                                         </AnchorPane>
                                         <AnchorPane fx:id="barchart" layoutX="790.0" layoutY="6.0" prefHeight="314.0" prefWidth="228.0" AnchorPane.bottomAnchor="310.0" AnchorPane.leftAnchor="800.0" AnchorPane.rightAnchor="410.0" AnchorPane.topAnchor="30.0">
                                             <children>
-                                                <BarChart prefHeight="219.0" prefWidth="233.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                <BarChart fx:id="s" prefHeight="219.0" prefWidth="233.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                                     <xAxis>
                                                         <CategoryAxis side="BOTTOM" />
                                                     </xAxis>
@@ -306,18 +306,18 @@
                                         </AnchorPane>
                                         <AnchorPane layoutX="802.0" layoutY="32.0" prefHeight="229.0" prefWidth="381.0" AnchorPane.bottomAnchor="310.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="31.0">
                                             <children>
-                                                <PieChart layoutX="-36.0" layoutY="-77.0" prefHeight="323.0" prefWidth="464.0" title="Doencas" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                <PieChart fx:id="admin_Doencas_graph" layoutX="-36.0" layoutY="-77.0" prefHeight="323.0" prefWidth="464.0" title="Doencas" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                                             </children>
                                         </AnchorPane>
                                         <AnchorPane layoutX="801.0" layoutY="287.0" prefHeight="270.0" prefWidth="632.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="800.0" AnchorPane.rightAnchor="0.0">
                                             <children>
-                                                <TableView layoutX="167.0" layoutY="14.0" AnchorPane.bottomAnchor="13.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0">
+                                                <TableView fx:id="admin_alta_semanal" layoutX="167.0" layoutY="14.0" AnchorPane.bottomAnchor="13.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0">
                                                     <columns>
-                                                        <TableColumn prefWidth="201.0" text="Nome do Paciente" />
-                                                        <TableColumn prefWidth="123.0" text="Doenca" />
-                                                        <TableColumn prefWidth="144.0" text="Medico" />
-                                                        <TableColumn minWidth="5.0" prefWidth="68.0" text="Sexo" />
-                                                        <TableColumn prefWidth="96.0" text="Quarto" />
+                                                        <TableColumn fx:id="admin_alta_semanal_nomePa" prefWidth="201.0" text="Nome do Paciente" />
+                                                        <TableColumn fx:id="admin_alta_semanal_doenca" prefWidth="123.0" text="Doenca" />
+                                                        <TableColumn fx:id="admin_alta_semanal_medico" prefWidth="144.0" text="Medico" />
+                                                        <TableColumn fx:id="admin_alta_semanal_sexo" minWidth="5.0" prefWidth="68.0" text="Sexo" />
+                                                        <TableColumn fx:id="admin_alta_semanal_quarto" prefWidth="96.0" text="Quarto" />
                                                     </columns>
                                                 </TableView>
                                             </children>
