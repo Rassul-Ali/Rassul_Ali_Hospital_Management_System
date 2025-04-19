@@ -90,3 +90,8 @@
 .shadow{
     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 5,0,0,0);
 }
+
+.button.selected{
+    -fx-background-color: linear-gradient(to bottom left, #2A5CAA,#4B8DF8);
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 10,0,0,0);
+}

@@ -37,4 +37,4 @@ build/
 ### Mac OS ###
 .DS_Store
 
-Test.java
+src/main/java/com/javafx/hospital/Tadmin.java
