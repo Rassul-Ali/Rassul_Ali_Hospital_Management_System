@@ -34,7 +34,7 @@
                                         <Font name="System Bold" size="14.0" />
                                     </font>
                                 </Label>
-                                <Button fx:id="admin_dashboard" alignment="TOP_LEFT" layoutX="21.0" layoutY="198.0" maxWidth="45.0" mnemonicParsing="false" onMousePressed="#setBtnBack" prefHeight="40.0" stylesheets="@Styles/AdminMainForm.css" text="Dashboard" translateY="-20.0" AnchorPane.leftAnchor="21.0" AnchorPane.rightAnchor="19.0" AnchorPane.topAnchor="198.0">
+                                <Button fx:id="admin_dashboard" alignment="TOP_LEFT" layoutX="21.0" layoutY="198.0" maxWidth="45.0" mnemonicParsing="false" prefHeight="40.0" stylesheets="@Styles/AdminMainForm.css" text="Dashboard" translateY="-20.0" AnchorPane.leftAnchor="21.0" AnchorPane.rightAnchor="19.0" AnchorPane.topAnchor="198.0">
                                     <graphic>
                                         <FontAwesomeIconView glyphName="CUBE" size="2.5em" styleClass="font" />
                                     </graphic>
@@ -49,7 +49,7 @@
                                         <String fx:value="radius" />
                                     </styleClass>
                                 </Button>
-                                <Button fx:id="admin_medicos" alignment="TOP_LEFT" layoutX="21.0" layoutY="263.0" mnemonicParsing="false" onMousePressed="#setBtnBack" prefHeight="40.0" stylesheets="@Styles/AdminMainForm.css" text="Medicos" translateY="-20.0" AnchorPane.leftAnchor="21.0" AnchorPane.rightAnchor="19.0" AnchorPane.topAnchor="263.0">
+                                <Button fx:id="admin_medicos" alignment="TOP_LEFT" layoutX="21.0" layoutY="263.0" mnemonicParsing="false" prefHeight="40.0" stylesheets="@Styles/AdminMainForm.css" text="Medicos" translateY="-20.0" AnchorPane.leftAnchor="21.0" AnchorPane.rightAnchor="19.0" AnchorPane.topAnchor="263.0">
                                     <graphic>
                                         <FontAwesomeIconView glyphName="USER_MD" size="2.5em" styleClass="font" />
                                     </graphic>
