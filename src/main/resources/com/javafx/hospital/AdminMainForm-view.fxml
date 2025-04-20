@@ -340,11 +340,36 @@
                         </AnchorPane>
                         <AnchorPane fx:id="admin_medicos_form" layoutX="10.0" layoutY="10.0" prefHeight="866.0" prefWidth="1485.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
-                              <Label layoutX="514.0" layoutY="416.0" text="MEDICOS FORM UNDER CONSTRUCTION" AnchorPane.bottomAnchor="415.0" AnchorPane.leftAnchor="514.0" AnchorPane.rightAnchor="514.0" AnchorPane.topAnchor="416.0">
-                                 <font>
-                                    <Font name="System Bold" size="20.0" />
-                                 </font>
-                              </Label>
+                              <AnchorPane layoutX="80.0" layoutY="160.0" prefHeight="200.0" prefWidth="200.0" stylesheets="@Styles/AdminMainForm.css" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="15.0">
+                                 <styleClass>
+                                    <String fx:value="white-bg" />
+                                    <String fx:value="shadow" />
+                                    <String fx:value="border" />
+                                 </styleClass>
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="14.0" text="Lista de Medicos" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="3.0">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                       <styleClass>
+                                          <String fx:value="topPaneText" />
+                                          <String fx:value="header-1" />
+                                       </styleClass>
+                                    </Label>
+                                    <TableView layoutX="15.0" layoutY="36.0" stylesheets="@Styles/AdminMainForm.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+                                      <columns>
+                                        <TableColumn prefWidth="128.0" text="ID" />
+                                        <TableColumn prefWidth="176.0" text="Nome" />
+                                          <TableColumn prefWidth="117.0" text="Sexo" />
+                                          <TableColumn prefWidth="149.0" text="Celular" />
+                                          <TableColumn prefWidth="265.0" text="E-mail" />
+                                          <TableColumn prefWidth="265.0" text="Especializacao" />
+                                          <TableColumn prefWidth="265.0" text="Endereco" />
+                                          <TableColumn prefWidth="87.0" text="Idade" />
+                                      </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
                            </children>
                         </AnchorPane>
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Powered by Alpha3" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="15.0">
@@ -358,7 +383,7 @@
                     <top>
                         <AnchorPane prefHeight="40.0" prefWidth="200.0" styleClass="topPane" stylesheets="@Styles/AdminMainForm.css" BorderPane.alignment="CENTER">
                             <children>
-                                <Label layoutX="19.0" layoutY="13.0" text="Administrador" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="19.0" AnchorPane.topAnchor="12.0">
+                                <Label layoutX="19.0" layoutY="13.0" styleClass="header-1" stylesheets="@Styles/AdminMainForm.css" text="Administrador" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="19.0" AnchorPane.topAnchor="12.0">
                                     <font>
                                         <Font name="System Bold" size="16.0" />
                                     </font>

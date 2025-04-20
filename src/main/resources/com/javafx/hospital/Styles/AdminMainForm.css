@@ -95,3 +95,20 @@
     -fx-background-color: linear-gradient(to bottom left, #2A5CAA,#4B8DF8);
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 10,0,0,0);
 }
+
+.header-1{
+    -fx-border-color: linear-gradient(to bottom right, #188ba7, #306090);
+    -fx-border-width: 0 0 0 2px;
+    -fx-padding: 0 0 0 5px;
+}
+
+
+.table-view .column-header{
+     -fx-background-color: #fff;
+     -fx-border-color: #D3D3D3;
+     -fx-border-width: 0.6px;
+}
+
+.table-view .header-background{
+    -fx-background-color: #fff;
+}
