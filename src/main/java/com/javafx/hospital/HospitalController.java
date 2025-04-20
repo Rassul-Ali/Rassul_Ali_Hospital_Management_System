@@ -18,8 +18,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
@@ -29,7 +27,7 @@ public class HospitalController implements Initializable {
     private CheckBox login_checkBox;
 
     @FXML
-    private ComboBox<?> login_comboBox;
+    private ComboBox<String> login_comboBox;
 
     @FXML
     private BorderPane login_form;
@@ -85,171 +83,162 @@ public class HospitalController implements Initializable {
     protected static String login_name;
 
     public void addUsers() {
-        List<String> list = new ArrayList<>();
-        for (String lisd : Users.users) {
-            list.add(lisd);
-        }
-        ObservableList listdata = FXCollections.observableList(list);
-        login_comboBox.setItems(listdata);
-        login_comboBox.getSelectionModel().selectFirst();
+        try {
+            // Cria uma cópia defensiva da lista de usuários
+            ObservableList<String> userList = FXCollections.observableArrayList(Users.users);
 
+            // Configura o ComboBox com a lista de usuários
+            login_comboBox.setItems(userList);
+
+            // Seleciona o primeiro item apenas se a lista não estiver vazia
+            if (!userList.isEmpty()) {
+                login_comboBox.getSelectionModel().selectFirst();
+            } else {
+                System.err.println("Aviso: Lista de usuários vazia");
+                // Opcional: Mostrar alerta para o usuário
+                // alertMessage.warningMessage("Nenhum tipo de usuário disponível");
+            }
+        } catch (Exception e) {
+            System.err.println("Erro ao carregar usuários: " + e.getMessage());
+            // Fallback: Limpa o ComboBox em caso de erro
+            login_comboBox.setItems(FXCollections.emptyObservableList());
+        }
     }
 
-    public void switchPge() throws IOException {
-        if (login_comboBox.getSelectionModel().getSelectedItem().equals("Administrador")) {
-            Parent root = FXMLLoader.load(getClass().getResource("loginRegister-view.fxml"));
-            Stage stage = new Stage();
-            stage.setScene(new Scene(root));
-            stage.setResizable(false);
-            stage.setTitle("Alpha3 Login do Administrador");
-            stage.show();
+    public void switchPage() {
+        try {
+            String selectedRole = (String) login_comboBox.getSelectionModel().getSelectedItem();
 
-        } else if (login_comboBox.getSelectionModel().getSelectedItem().equals("Medico")) {
-            Parent root = FXMLLoader.load(getClass().getResource("Doctor-view.fxml"));
-            Stage stage = new Stage();
-            stage.setScene(new Scene(root));
-            stage.setResizable(false);
-            stage.setTitle("Alpha3 Login do Doctor");
-            stage.show();
+            if (selectedRole == null) {
+                alertMessage.errorMessage("Por favor, selecione um tipo de usuário");
+                return;
+            }
+
+            String fxmlFile;
+            String title;
+
+            switch (selectedRole) {
+                case "Administrador":
+                    fxmlFile = "loginRegister-view.fxml";
+                    title = "Alpha3 Login do Administrador";
+                    break;
+                case "Medico":
+                    fxmlFile = "Doctor-view.fxml";
+                    title = "Alpha3 Login do Doctor";
+                    break;
+                default:
+                    alertMessage.errorMessage("Tipo de usuário não reconhecido");
+                    return;
+            }
+
+            loadAndShowStage(fxmlFile, title);
+            closeCurrentWindow();
+
+        } catch (IOException e) {
+            alertMessage.errorMessage("Erro ao carregar a página: " + e.getMessage());
+            e.printStackTrace();
         }
-        login_form.getScene().getWindow().hide();
+    }
+
+    private void loadAndShowStage(String fxmlFile, String title) throws IOException {
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource(fxmlFile)));
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        stage.setResizable(false);
+        stage.setTitle(title);
+        stage.show();
+    }
+
+    private void closeCurrentWindow() {
+        ((Stage) login_form.getScene().getWindow()).close();
     }
 
     public void loginAccount() throws SQLException {
-
+        // Validação de campos vazios
         if (login_username.getText().isEmpty() || login_password.getText().isEmpty()) {
-            alertMessage.errorMessage("Nome do usuario ou palavara passe incorreta");
-        } else {
-            String sql = "SELECT * FROM login_admin WHERE USERNAME = ? AND PASSWORD = ?";
-            connection = DataBase.connectDB();
+            alertMessage.errorMessage("Nome de usuário ou senha incorreta");
+            return;
+        }
 
-            if (!login_showPassword.isVisible()) {
-                if (!login_showPassword.getText().equals(login_password.getText())) {
-                    login_showPassword.setText(login_password.getText());
-                }
-            } else {
-                if (!login_showPassword.getText().equals(login_password.getText())) {
-                    login_password.setText(login_showPassword.getText());
-                }
+        // Sincronização entre campos de senha visível/invisível
+        if (!login_showPassword.isVisible()) {
+            if (!login_showPassword.getText().equals(login_password.getText())) {
+                login_showPassword.setText(login_password.getText());
             }
+        } else {
+            if (!login_showPassword.getText().equals(login_password.getText())) {
+                login_password.setText(login_showPassword.getText());
+            }
+        }
 
-            preparedStatement = connection.prepareStatement(sql);
+        // Autenticação
+        String sql = "SELECT FIRST_NAME, LAST_NAME FROM login_admin WHERE USERNAME = ? AND PASSWORD = ?";
+
+        try (Connection connection = DataBase.connectDB();
+             PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+
             preparedStatement.setString(1, login_username.getText());
             preparedStatement.setString(2, login_password.getText());
-            resultSet = preparedStatement.executeQuery();
 
-            if (resultSet.next()) {
-                login_name = resultSet.getString("FIRST_NAME") +" "+ resultSet.getString("LAST_NAME");
-                try {
-                    Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("AdminMainForm-view.fxml")));
-                    Stage stage = new Stage();
-                    stage.setScene(new Scene(root));
-                    stage.setTitle("Portal do Administardor");
-                    stage.show();
-                    login_form.getScene().getWindow().hide();
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                if (resultSet.next()) {
+                    login_name = resultSet.getString("FIRST_NAME") + " " + resultSet.getString("LAST_NAME");
+                    openAdminPortal();
+                } else {
+                    alertMessage.errorMessage("Nome de usuário ou senha incorreta");
                 }
-            } else {
-                alertMessage.errorMessage("Nome do usuario ou palavara passe incorreta"); // Se imitira um alerta
             }
-
+        } catch (SQLException e) {
+            alertMessage.errorMessage("Erro ao conectar com o banco de dados");
+            throw e;
         }
     }
 
     public void loginShowPassword() {
-        if (login_checkBox.isSelected()) {
-            login_showPassword.setText(login_password.getText());
-            login_showPassword.setVisible(true);
-            login_password.setVisible(false);
-        } else {
-            login_password.setText(login_showPassword.getText());
+        try {
+            boolean showPassword = login_checkBox.isSelected();
+
+            // Garante que ambos campos tenham o mesmo valor antes de alternar
+            String currentPassword = showPassword
+                    ? login_password.getText()
+                    : login_showPassword.getText();
+
+            // Atualiza ambos campos para manter sincronização
+            login_showPassword.setText(currentPassword);
+            login_password.setText(currentPassword);
+
+            // Alterna visibilidade
+            login_showPassword.setVisible(showPassword);
+            login_password.setVisible(!showPassword);
+
+            // Foca no campo visível para melhor UX
+            if (showPassword) {
+                login_showPassword.requestFocus();
+            } else {
+                login_password.requestFocus();
+            }
+
+        } catch (Exception e) {
+            System.err.println("Erro ao alternar visibilidade da senha: " + e.getMessage());
+            // Fallback: mostra ambos campos em caso de erro
             login_password.setVisible(true);
             login_showPassword.setVisible(false);
         }
     }
 
-
-    //Metodo pra registar um Administardor
-    /*   //Metodo para mudar de forma
-    public void switchForm(ActionEvent event) {
-        //Muda para Registar
-        if (event.getSource() == login_inscreverAqui) {
-            login_form.setVisible(false);
-            register_form.setVisible(true);
-        } else if (event.getSource() == register_loginAqui) { // Muda para Login
-            login_form.setVisible(true);
-            register_form.setVisible(false);
+    private void openAdminPortal() {
+        try {
+            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("AdminMainForm-view.fxml")));
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.setTitle("Portal do Administrador");
+            stage.show();
+            login_form.getScene().getWindow().hide();
+        } catch (IOException e) {
+            alertMessage.errorMessage("Erro ao abrir o portal do administrador");
+            e.printStackTrace();
         }
     }
-
-    public void registerAccount() throws SQLException {
-        if (register_email.getText().isEmpty()
-                || register_password.getText().isEmpty()
-                || register_username.getText().isEmpty()) {
-            alertMessage.errorMessage("Por Favor Prencha os espacos vazios");
-        } else {
-            if (!register_showPassword.isVisible()) {
-                if (!register_showPassword.getText().equals(register_password.getText())) {
-                    register_showPassword.setText(register_password.getText());
-                }
-            } else {
-                if (!register_showPassword.getText().equals(register_password.getText())) {
-                    register_password.setText(register_showPassword.getText());
-                }
-            }
-
-            String checkUserName = "SELECT * FROM login_admin WHERE USERNAME = ? ";
-            connection = DataBase.connectDB();
-            preparedStatement = connection.prepareStatement(checkUserName);
-            preparedStatement.setString(1, register_username.getText());
-            resultSet = preparedStatement.executeQuery();
-            if (resultSet.next()) {
-                alertMessage.errorMessage("O nome do usuario ja existe: " + register_username.getText());
-            } else if (register_password.getText().length() < 8) { //Verifica se o password < 8
-                alertMessage.errorMessage("O tamanho do Password inavlido, minimo 8 caracters");
-            } else {
-                //Para Inserir um usuario a base de dados
-                String insertData = "INSERT INTO login_admin (USERNAME,PASSWORD,EMAIL,CREAT_DATE) VALUES (?,?,?,?)";
-
-                Date data = new Date();
-                java.sql.Date sqlDate = new java.sql.Date(data.getTime());
-
-                preparedStatement = connection.prepareStatement(insertData);
-                preparedStatement.setString(1, register_username.getText());
-                preparedStatement.setString(2, register_password.getText());
-                preparedStatement.setString(3, register_email.getText());
-                preparedStatement.setString(4, String.valueOf(sqlDate));
-                preparedStatement.executeUpdate();
-
-                alertMessage.successMessage("Usuario Registado com Sucesso");
-                registerClear();
-                //Muda a forma para login
-                login_form.setVisible(true);
-                register_form.setVisible(false);
-            }
-        }
-    }
-
-    public void registerClear() {
-        register_password.clear();
-        register_username.clear();
-        register_showPassword.clear();
-        register_email.clear();
-    }
-
-
-    public void registerShowPassword() {
-        if (register_checkBox.isSelected()) {
-            register_showPassword.setText(register_password.getText());
-            register_password.setVisible(false);
-            register_showPassword.setVisible(true);
-        } else {
-            register_password.setText(register_showPassword.getText());
-            register_showPassword.setVisible(false);
-            register_password.setVisible(true);
-        }
-    }*/
 
 
     @Override
