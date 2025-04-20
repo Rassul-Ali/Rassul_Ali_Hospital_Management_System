@@ -151,7 +151,7 @@
                     <center>
                         <AnchorPane fx:id="admin_main_form" prefHeight="200.0" prefWidth="200.0" styleClass="white-bg" stylesheets="@Styles/AdminMainForm.css" BorderPane.alignment="CENTER">
                             <children>
-                        <AnchorPane fx:id="admin_dashboard_form" prefHeight="856.0" prefWidth="1475.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <AnchorPane fx:id="admin_dashboard_form" prefHeight="856.0" prefWidth="1475.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
                                       <AnchorPane prefHeight="220.0" prefWidth="1210.0" stylesheets="@Styles/AdminMainForm.css" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="20.0">
                                           <styleClass>
@@ -287,7 +287,7 @@
                                                               <Point3D />
                                                           </rotationAxis>
                                                       </TableView>
-                                                      <Label layoutX="129.0" layoutY="8.0" text="Internamento Semanal" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="5.0">
+                                                      <Label layoutX="129.0" layoutY="8.0" styleClass="header-1" text="Internamento Semanal" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="5.0">
                                                           <font>
                                                               <Font name="System Bold" size="13.0" />
                                                           </font>
@@ -324,7 +324,7 @@
                                                       </TableView>
                                                   </children>
                                               </AnchorPane>
-                                              <Label layoutX="801.0" layoutY="265.0" text="Alta Semanal" AnchorPane.bottomAnchor="280.0" AnchorPane.leftAnchor="801.0">
+                                              <Label layoutX="801.0" layoutY="265.0" styleClass="header-1" text="Alta Semanal" AnchorPane.bottomAnchor="280.0" AnchorPane.leftAnchor="801.0">
                                                   <font>
                                                       <Font name="System Bold" size="13.0" />
                                                   </font>
@@ -338,7 +338,7 @@
                                       </Text>
                            </children>
                         </AnchorPane>
-                        <AnchorPane fx:id="admin_medicos_form" layoutX="10.0" layoutY="10.0" prefHeight="866.0" prefWidth="1485.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <AnchorPane fx:id="admin_medicos_form" layoutX="10.0" layoutY="10.0" prefHeight="866.0" prefWidth="1485.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
                               <AnchorPane layoutX="80.0" layoutY="160.0" prefHeight="200.0" prefWidth="200.0" stylesheets="@Styles/AdminMainForm.css" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="15.0">
                                  <styleClass>
