@@ -26,7 +26,7 @@
                      <children>
                         <FontAwesomeIconView fill="WHITE" glyphName="USER" layoutX="68.0" layoutY="137.0" size="9em" AnchorPane.leftAnchor="68.0" AnchorPane.rightAnchor="68.0" AnchorPane.topAnchor="40.0" />
                         <FontAwesomeIconView fill="WHITE" glyphName="HOSPITAL_ALT" layoutX="58.0" layoutY="387.0" size="10em" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="58.0" AnchorPane.rightAnchor="58.0" />
-                        <ComboBox fx:id="login_comboBox" layoutX="35.0" layoutY="167.0" onAction="#switchPage" prefHeight="30.0" prefWidth="150.0" promptText="Usuario:" stylesheets="@Styles/login.css" AnchorPane.leftAnchor="35.0" AnchorPane.rightAnchor="35.0" AnchorPane.topAnchor="170.0">
+                        <ComboBox fx:id="login_comboBox" layoutX="35.0" layoutY="167.0" onAction="#handleLogin" prefHeight="30.0" prefWidth="150.0" promptText="Usuario:" stylesheets="@Styles/login.css" AnchorPane.leftAnchor="35.0" AnchorPane.rightAnchor="35.0" AnchorPane.topAnchor="170.0">
                            <styleClass>
                               <String fx:value="textfield-1" />
                               <String fx:value="white-bg" />
@@ -74,7 +74,7 @@
                            </styleClass>
                         </TextField>
                         <CheckBox fx:id="login_checkBox" layoutX="62.0" layoutY="256.0" mnemonicParsing="false" onAction="#loginShowPassword" stylesheets="@Styles/login.css" text="Mostrar Password" AnchorPane.leftAnchor="62.0" AnchorPane.topAnchor="260.0" />
-                        <Button fx:id="login_loginBtn" layoutX="64.0" layoutY="324.0" mnemonicParsing="false" onAction="#loginAccount" prefHeight="40.0" styleClass="btn-1" stylesheets="@Styles/login.css" text="Login" AnchorPane.leftAnchor="64.0" AnchorPane.rightAnchor="64.0" />
+                        <Button fx:id="login_loginBtn" layoutX="64.0" layoutY="324.0" mnemonicParsing="false" onAction="#handleLogin" prefHeight="40.0" styleClass="btn-1" stylesheets="@Styles/login.css" text="Login" AnchorPane.leftAnchor="64.0" AnchorPane.rightAnchor="64.0" />
                         <Text layoutX="288.0" layoutY="470.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Powered by Alpha3" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="10.0" />
                      </children>
                   </AnchorPane>
