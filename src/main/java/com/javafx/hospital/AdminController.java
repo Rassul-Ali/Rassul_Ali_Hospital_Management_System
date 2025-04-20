@@ -1,5 +1,6 @@
 package com.javafx.hospital;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,13 +13,13 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Objects;
 import java.util.ResourceBundle;
@@ -48,22 +49,19 @@ public class AdminController implements Initializable {
     private TableColumn<?, ?> admin_alta_semanal_sexo;
 
     @FXML
+    private Button admin_conta;
+
+    @FXML
     private Button admin_dashboard;
 
     @FXML
-    private Button admin_definicoes;
+    private AnchorPane admin_dashboard_form;
 
     @FXML
-    private Button admin_definicoes1;
+    private Button admin_estagiario;
 
     @FXML
-    private Button admin_definicoes2;
-
-    @FXML
-    private Button admin_definicoes21;
-
-    @FXML
-    private BarChart<?, ?> admin_intPa_graph;
+    private Label admin_form_text;
 
     @FXML
     private TableView<?> admin_interna_semanal;
@@ -90,13 +88,25 @@ public class AdminController implements Initializable {
     private StackPane admin_main;
 
     @FXML
+    private AnchorPane admin_main_form;
+
+    @FXML
     private Button admin_medicos;
+
+    @FXML
+    private AnchorPane admin_medicos_form;
 
     @FXML
     private Button admin_pacientes;
 
     @FXML
+    private Button admin_reg_estagiario;
+
+    @FXML
     private Button admin_reg_medicos;
+
+    @FXML
+    private Button admin_relatorio;
 
     @FXML
     private Button admin_sair;
@@ -120,7 +130,10 @@ public class AdminController implements Initializable {
     private AnchorPane barchart;
 
     @FXML
-    private Label dasboard_date;
+    private Label admin_date;
+
+    @FXML
+    private BarChart<?, ?> s;
 
 
     public void sair() {
@@ -137,19 +150,49 @@ public class AdminController implements Initializable {
         admin_main.getScene().getWindow().hide();
     }
 
-    public void setDate() {
-        Date date = new Date();
-        dasboard_date.setText(String.valueOf(new java.sql.Date(date.getTime())));
+    public void runTime() {
+        new Thread() {
+            public void run() {
+                SimpleDateFormat format = new SimpleDateFormat("MM/dd/YYYY hh:mm:ss a");
+                while (true) {
+
+                    try {
+                        Thread.sleep(1000);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                    Platform.runLater(() -> {
+                        admin_date.setText(format.format(new Date()));
+                    });
+                }
+
+            }
+        }.start();
     }
 
     public void setName() {
         admin_user.setText(HospitalController.login_name);
     }
 
+    public void swapMainForm(ActionEvent event) {
+        if (event.getSource() == admin_dashboard) {
+            admin_dashboard_form.setVisible(true);
+            admin_medicos_form.setVisible(false);
+            admin_form_text.setText("Dashboard");
+        } else if (event.getSource() == admin_medicos) {
+            admin_medicos_form.setVisible(true);
+            admin_dashboard_form.setVisible(false);
+            admin_form_text.setText("Medicos");
+        } else if (admin_reg_medicos.isHover()) {
+
+        }
+    }
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        setDate();
+        runTime();
         setName();
+        admin_form_text.setText("Dashboard");
     }
 }
