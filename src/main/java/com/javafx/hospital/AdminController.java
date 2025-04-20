@@ -58,6 +58,9 @@ public class AdminController implements Initializable {
     private AnchorPane admin_dashboard_form;
 
     @FXML
+    private Label admin_date;
+
+    @FXML
     private Button admin_estagiario;
 
     @FXML
@@ -89,6 +92,33 @@ public class AdminController implements Initializable {
 
     @FXML
     private AnchorPane admin_main_form;
+
+    @FXML
+    private TableView<?> admin_med_table;
+
+    @FXML
+    private TableColumn<?, ?> admin_med_table_Celular;
+
+    @FXML
+    private TableColumn<?, ?> admin_med_table_End;
+
+    @FXML
+    private TableColumn<?, ?> admin_med_table_Espc;
+
+    @FXML
+    private TableColumn<?, ?> admin_med_table_ID;
+
+    @FXML
+    private TableColumn<?, ?> admin_med_table_Idade;
+
+    @FXML
+    private TableColumn<?, ?> admin_med_table_Nome;
+
+    @FXML
+    private TableColumn<?, ?> admin_med_table_Sexo;
+
+    @FXML
+    private TableColumn<?, ?> admin_med_table_emal;
 
     @FXML
     private Button admin_medicos;
@@ -130,10 +160,8 @@ public class AdminController implements Initializable {
     private AnchorPane barchart;
 
     @FXML
-    private Label admin_date;
-
-    @FXML
     private BarChart<?, ?> s;
+
 
 
     public void sair() {
@@ -170,6 +198,63 @@ public class AdminController implements Initializable {
         }.start();
     }
 
+    private void configurarTabelaMedicos() {
+        Platform.runLater(() -> {
+            admin_med_table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
+
+            double totalWidth = admin_med_table.getWidth();
+            if(totalWidth > 0) {
+                admin_med_table_ID.setPrefWidth(totalWidth * 0.08);       // 8%
+                admin_med_table_Nome.setPrefWidth(totalWidth * 0.15);     // 15%
+                admin_med_table_Sexo.setPrefWidth(totalWidth * 0.08);     // 8%
+                admin_med_table_Celular.setPrefWidth(totalWidth * 0.12);  // 12%
+                admin_med_table_emal.setPrefWidth(totalWidth * 0.20);      // 20%
+                admin_med_table_Espc.setPrefWidth(totalWidth * 0.17);     // 17%
+                admin_med_table_End.setPrefWidth(totalWidth * 0.15);      // 15%
+                admin_med_table_Idade.setPrefWidth(totalWidth * 0.05);    // 5%
+            }
+
+            admin_med_table.widthProperty().addListener((obs, oldVal, newVal) -> {
+                if(newVal.doubleValue() > 0) {
+                    admin_med_table_ID.setPrefWidth(newVal.doubleValue() * 0.08);
+                    admin_med_table_Nome.setPrefWidth(newVal.doubleValue() * 0.15);
+                    admin_med_table_Sexo.setPrefWidth(newVal.doubleValue() * 0.08);
+                    admin_med_table_Celular.setPrefWidth(newVal.doubleValue() * 0.12);
+                    admin_med_table_emal.setPrefWidth(newVal.doubleValue() * 0.20);
+                    admin_med_table_Espc.setPrefWidth(newVal.doubleValue() * 0.17);
+                    admin_med_table_End.setPrefWidth(newVal.doubleValue() * 0.15);
+                    admin_med_table_Idade.setPrefWidth(newVal.doubleValue() * 0.05);
+                }
+            });
+        });
+    }
+
+
+    private void configurarTabelaAltas() {
+        Platform.runLater(() -> {
+            admin_alta_semanal.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
+
+            double totalWidth = admin_alta_semanal.getWidth();
+            if(totalWidth > 0) {
+                admin_alta_semanal_nomePa.setPrefWidth(totalWidth * 0.30);
+                admin_alta_semanal_doenca.setPrefWidth(totalWidth * 0.25);
+                admin_alta_semanal_medico.setPrefWidth(totalWidth * 0.25);
+                admin_alta_semanal_sexo.setPrefWidth(totalWidth * 0.10);
+                admin_alta_semanal_quarto.setPrefWidth(totalWidth * 0.10);
+            }
+
+            admin_alta_semanal.widthProperty().addListener((obs, oldVal, newVal) -> {
+                if(newVal.doubleValue() > 0) {
+                    admin_alta_semanal_nomePa.setPrefWidth(newVal.doubleValue() * 0.30);
+                    admin_alta_semanal_doenca.setPrefWidth(newVal.doubleValue() * 0.25);
+                    admin_alta_semanal_medico.setPrefWidth(newVal.doubleValue() * 0.25);
+                    admin_alta_semanal_sexo.setPrefWidth(newVal.doubleValue() * 0.10);
+                    admin_alta_semanal_quarto.setPrefWidth(newVal.doubleValue() * 0.10);
+                }
+            });
+        });
+    }
+
     public void setName() {
         admin_user.setText(HospitalController.login_name);
     }
@@ -194,5 +279,7 @@ public class AdminController implements Initializable {
         runTime();
         setName();
         admin_form_text.setText("Dashboard");
+        configurarTabelaMedicos();
+        configurarTabelaAltas();
     }
 }

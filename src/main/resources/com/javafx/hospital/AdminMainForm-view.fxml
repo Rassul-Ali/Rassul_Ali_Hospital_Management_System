@@ -274,7 +274,7 @@
                                           <children>
                                               <AnchorPane layoutX="4.0" layoutY="4.0" AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="3.0" AnchorPane.topAnchor="3.0">
                                                   <children>
-                                                      <TableView fx:id="admin_interna_semanal" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="30.0">
+                                                      <TableView fx:id="admin_interna_semanal" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="9.0" AnchorPane.topAnchor="30.0">
                                                           <columns>
                                                               <TableColumn fx:id="admin_interna_semanal_nomePa" prefWidth="196.0" text="Nome do Paciente" />
                                                               <TableColumn fx:id="admin_interna_semanal_doenca" prefWidth="167.0" text="Doenca" />
@@ -286,6 +286,9 @@
                                                           <rotationAxis>
                                                               <Point3D />
                                                           </rotationAxis>
+                                             <columnResizePolicy>
+                                                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                             </columnResizePolicy>
                                                       </TableView>
                                                       <Label layoutX="129.0" layoutY="8.0" styleClass="header-1" text="Internamento Semanal" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="5.0">
                                                           <font>
@@ -321,6 +324,9 @@
                                                               <TableColumn fx:id="admin_alta_semanal_sexo" minWidth="5.0" prefWidth="68.0" text="Sexo" />
                                                               <TableColumn fx:id="admin_alta_semanal_quarto" prefWidth="96.0" text="Quarto" />
                                                           </columns>
+                                             <columnResizePolicy>
+                                                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                             </columnResizePolicy>
                                                       </TableView>
                                                   </children>
                                               </AnchorPane>
@@ -356,17 +362,20 @@
                                           <String fx:value="header-1" />
                                        </styleClass>
                                     </Label>
-                                    <TableView layoutX="15.0" layoutY="36.0" stylesheets="@Styles/AdminMainForm.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+                                    <TableView fx:id="admin_med_table" layoutX="15.0" layoutY="36.0" stylesheets="@Styles/AdminMainForm.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
                                       <columns>
-                                        <TableColumn prefWidth="128.0" text="ID" />
-                                        <TableColumn prefWidth="176.0" text="Nome" />
-                                          <TableColumn prefWidth="117.0" text="Sexo" />
-                                          <TableColumn prefWidth="149.0" text="Celular" />
-                                          <TableColumn prefWidth="265.0" text="E-mail" />
-                                          <TableColumn prefWidth="265.0" text="Especializacao" />
-                                          <TableColumn prefWidth="265.0" text="Endereco" />
-                                          <TableColumn prefWidth="87.0" text="Idade" />
+                                        <TableColumn fx:id="admin_med_table_ID" prefWidth="128.0" text="ID" />
+                                        <TableColumn fx:id="admin_med_table_Nome" prefWidth="176.0" text="Nome" />
+                                          <TableColumn fx:id="admin_med_table_Sexo" prefWidth="117.0" text="Sexo" />
+                                          <TableColumn fx:id="admin_med_table_Celular" prefWidth="149.0" text="Celular" />
+                                          <TableColumn fx:id="admin_med_table_emal" prefWidth="265.0" text="E-mail" />
+                                          <TableColumn fx:id="admin_med_table_Espc" prefWidth="265.0" text="Especializacao" />
+                                          <TableColumn fx:id="admin_med_table_End" prefWidth="265.0" text="Endereco" />
+                                          <TableColumn fx:id="admin_med_table_Idade" prefWidth="87.0" text="Idade" />
                                       </columns>
+                                       <columnResizePolicy>
+                                          <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                       </columnResizePolicy>
                                     </TableView>
                                  </children>
                               </AnchorPane>
