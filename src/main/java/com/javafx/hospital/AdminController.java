@@ -41,94 +41,229 @@ public class AdminController implements Initializable {
     // FXML Components
     @FXML
     private PieChart admin_Doencas_graph;
+
     @FXML
     private TableView<?> admin_alta_semanal;
+
     @FXML
     private TableColumn<?, ?> admin_alta_semanal_doenca;
+
     @FXML
     private TableColumn<?, ?> admin_alta_semanal_medico;
+
     @FXML
     private TableColumn<?, ?> admin_alta_semanal_nomePa;
+
     @FXML
     private TableColumn<?, ?> admin_alta_semanal_quarto;
+
     @FXML
     private TableColumn<?, ?> admin_alta_semanal_sexo;
+
     @FXML
     private Button admin_conta;
+
     @FXML
     private Button admin_dashboard;
+
     @FXML
     private AnchorPane admin_dashboard_form;
+
     @FXML
     private Label admin_date;
+
     @FXML
     private Button admin_estagiario;
+
+    @FXML
+    private AnchorPane admin_estagiario_form;
+
     @FXML
     private Label admin_form_text;
+
     @FXML
     private TableView<?> admin_interna_semanal;
+
     @FXML
     private TableColumn<?, ?> admin_interna_semanal_Medico;
+
     @FXML
     private TableColumn<?, ?> admin_interna_semanal_doenca;
+
     @FXML
     private TableColumn<?, ?> admin_interna_semanal_idade;
+
     @FXML
     private TableColumn<?, ?> admin_interna_semanal_nomePa;
+
     @FXML
     private TableColumn<?, ?> admin_interna_semanal_quarto;
+
     @FXML
     private TableColumn<?, ?> admin_interna_semanal_sexo;
+
     @FXML
     private StackPane admin_main;
+
     @FXML
     private AnchorPane admin_main_form;
+
     @FXML
     private TableView<?> admin_med_table;
+
+    @FXML
+    private TableView<?> admin_med_table1;
+
+    @FXML
+    private TableView<?> admin_med_table11;
+
+    @FXML
+    private TableView<?> admin_med_table111;
+
     @FXML
     private TableColumn<?, ?> admin_med_table_Celular;
+
+    @FXML
+    private TableColumn<?, ?> admin_med_table_Celular1;
+
+    @FXML
+    private TableColumn<?, ?> admin_med_table_Celular11;
+
+    @FXML
+    private TableColumn<?, ?> admin_med_table_Celular111;
+
     @FXML
     private TableColumn<?, ?> admin_med_table_End;
+
+    @FXML
+    private TableColumn<?, ?> admin_med_table_End1;
+
+    @FXML
+    private TableColumn<?, ?> admin_med_table_End11;
+
+    @FXML
+    private TableColumn<?, ?> admin_med_table_End111;
+
     @FXML
     private TableColumn<?, ?> admin_med_table_Espc;
+
+    @FXML
+    private TableColumn<?, ?> admin_med_table_Espc1;
+
+    @FXML
+    private TableColumn<?, ?> admin_med_table_Espc11;
+
+    @FXML
+    private TableColumn<?, ?> admin_med_table_Espc111;
+
     @FXML
     private TableColumn<?, ?> admin_med_table_ID;
+
+    @FXML
+    private TableColumn<?, ?> admin_med_table_ID1;
+
+    @FXML
+    private TableColumn<?, ?> admin_med_table_ID11;
+
+    @FXML
+    private TableColumn<?, ?> admin_med_table_ID111;
+
     @FXML
     private TableColumn<?, ?> admin_med_table_Idade;
+
+    @FXML
+    private TableColumn<?, ?> admin_med_table_Idade1;
+
+    @FXML
+    private TableColumn<?, ?> admin_med_table_Idade11;
+
+    @FXML
+    private TableColumn<?, ?> admin_med_table_Idade111;
+
     @FXML
     private TableColumn<?, ?> admin_med_table_Nome;
+
+    @FXML
+    private TableColumn<?, ?> admin_med_table_Nome1;
+
+    @FXML
+    private TableColumn<?, ?> admin_med_table_Nome11;
+
+    @FXML
+    private TableColumn<?, ?> admin_med_table_Nome111;
+
     @FXML
     private TableColumn<?, ?> admin_med_table_Sexo;
+
+    @FXML
+    private TableColumn<?, ?> admin_med_table_Sexo1;
+
+    @FXML
+    private TableColumn<?, ?> admin_med_table_Sexo11;
+
+    @FXML
+    private TableColumn<?, ?> admin_med_table_Sexo111;
+
     @FXML
     private TableColumn<?, ?> admin_med_table_emal;
+
+    @FXML
+    private TableColumn<?, ?> admin_med_table_emal1;
+
+    @FXML
+    private TableColumn<?, ?> admin_med_table_emal11;
+
+    @FXML
+    private TableColumn<?, ?> admin_med_table_emal111;
+
     @FXML
     private Button admin_medicos;
+
     @FXML
     private AnchorPane admin_medicos_form;
+
     @FXML
     private Button admin_pacientes;
+
     @FXML
-    private Button admin_reg_estagiario;
+    private AnchorPane admin_pacientes_form;
+
     @FXML
-    private Button admin_reg_medicos;
+    private Button admin_registar;
+
+    @FXML
+    private Button admin_tecnicos;
+
     @FXML
     private Button admin_relatorio;
+
     @FXML
     private Button admin_sair;
+
+    @FXML
+    private AnchorPane admin_tecnicos_form;
+
     @FXML
     private Label admin_total_medicos;
+
     @FXML
     private Label admin_total_paci_falecidos;
+
     @FXML
     private Label admin_total_paci_internado;
+
     @FXML
     private Label admin_total_pacientes;
+
     @FXML
     private Label admin_user;
+
     @FXML
     private AnchorPane barchart;
+
     @FXML
     private BarChart<?, ?> s;
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -173,7 +308,7 @@ public class AdminController implements Initializable {
             Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("loginRegister-view.fxml")));
             Stage stage = new Stage();
             stage.setScene(new Scene(root));
-            stage.setTitle("Alpha3 Login do Administrador");
+            stage.setTitle("Alpha3 Login");
             stage.setResizable(false);
             stage.show();
 
@@ -242,6 +377,12 @@ public class AdminController implements Initializable {
             showDashboard();
         } else if (clickedButton == admin_medicos) {
             showMedicos();
+        } else if (clickedButton == admin_pacientes) {
+            showPacientes();
+        } else if (clickedButton == admin_estagiario) {
+            showEstagiario();
+        } else if (clickedButton == admin_tecnicos) {
+            showTecnico();
         }
         // Adicione outros botões conforme necessário
     }
@@ -249,12 +390,45 @@ public class AdminController implements Initializable {
     private void showDashboard() {
         admin_dashboard_form.setVisible(true);
         admin_medicos_form.setVisible(false);
+        admin_tecnicos_form.setVisible(false);
+        admin_pacientes_form.setVisible(false);
+        admin_estagiario_form.setVisible(false);
         admin_form_text.setText("Dashboard");
     }
 
     private void showMedicos() {
         admin_medicos_form.setVisible(true);
         admin_dashboard_form.setVisible(false);
+        admin_tecnicos_form.setVisible(false);
+        admin_pacientes_form.setVisible(false);
+        admin_estagiario_form.setVisible(false);
         admin_form_text.setText("Médicos");
+    }
+
+    private void showPacientes() {
+        admin_pacientes_form.setVisible(true);
+        admin_dashboard_form.setVisible(false);
+        admin_medicos_form.setVisible(false);
+        admin_tecnicos_form.setVisible(false);
+        admin_estagiario_form.setVisible(false);
+        admin_form_text.setText("Pacientes");
+    }
+
+    private void showEstagiario() {
+        admin_estagiario_form.setVisible(true);
+        admin_pacientes_form.setVisible(true);
+        admin_dashboard_form.setVisible(false);
+        admin_medicos_form.setVisible(false);
+        admin_tecnicos_form.setVisible(false);
+        admin_form_text.setText("Estagiario");
+    }
+
+    private void showTecnico() {
+        admin_tecnicos_form.setVisible(true);
+        admin_estagiario_form.setVisible(false);
+        admin_pacientes_form.setVisible(true);
+        admin_dashboard_form.setVisible(false);
+        admin_medicos_form.setVisible(false);
+        admin_form_text.setText("Tecnico");
     }
 }

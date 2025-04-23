@@ -26,8 +26,6 @@ public class HospitalController implements Initializable {
     @FXML
     private CheckBox login_checkBox;
 
-    @FXML
-    private ComboBox<String> login_comboBox;
 
     @FXML
     private BorderPane login_form;
@@ -82,63 +80,6 @@ public class HospitalController implements Initializable {
 
     protected static String login_name;
 
-    public void addUsers() {
-        try {
-            // Cria uma cópia defensiva da lista de usuários
-            ObservableList<String> userList = FXCollections.observableArrayList(Users.users);
-
-            // Configura o ComboBox com a lista de usuários
-            login_comboBox.setItems(userList);
-
-            // Seleciona o primeiro item apenas se a lista não estiver vazia
-            if (!userList.isEmpty()) {
-                login_comboBox.getSelectionModel().selectFirst();
-            } else {
-                System.err.println("Aviso: Lista de usuários vazia");
-                // Opcional: Mostrar alerta para o usuário
-                // alertMessage.warningMessage("Nenhum tipo de usuário disponível");
-            }
-        } catch (Exception e) {
-            System.err.println("Erro ao carregar usuários: " + e.getMessage());
-            // Fallback: Limpa o ComboBox em caso de erro
-            login_comboBox.setItems(FXCollections.emptyObservableList());
-        }
-    }
-
-    public void switchPage() {
-        try {
-            String selectedRole = (String) login_comboBox.getSelectionModel().getSelectedItem();
-
-            if (selectedRole == null) {
-                alertMessage.errorMessage("Por favor, selecione um tipo de usuário");
-                return;
-            }
-
-            String fxmlFile;
-            String title;
-
-            switch (selectedRole) {
-                case "Administrador":
-                    fxmlFile = "loginRegister-view.fxml";
-                    title = "Alpha3 Login do Administrador";
-                    break;
-                case "Medico":
-                    fxmlFile = "Doctor-view.fxml";
-                    title = "Alpha3 Login do Doctor";
-                    break;
-                default:
-                    alertMessage.errorMessage("Tipo de usuário não reconhecido");
-                    return;
-            }
-
-            loadAndShowStage(fxmlFile, title);
-            closeCurrentWindow();
-
-        } catch (IOException e) {
-            alertMessage.errorMessage("Erro ao carregar a página: " + e.getMessage());
-            e.printStackTrace();
-        }
-    }
 
     private void loadAndShowStage(String fxmlFile, String title) throws IOException {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource(fxmlFile)));
@@ -172,7 +113,7 @@ public class HospitalController implements Initializable {
         }
 
         // Autenticação
-        String sql = "SELECT FIRST_NAME, LAST_NAME FROM login_admin WHERE USERNAME = ? AND PASSWORD = ?";
+        String sql = "SELECT FIRST_NAME, LAST_NAME, CATEGORY FROM login WHERE USERNAME = ? AND PASSWORD = ?";
 
         try (Connection connection = DataBase.connectDB();
              PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
@@ -183,7 +124,16 @@ public class HospitalController implements Initializable {
             try (ResultSet resultSet = preparedStatement.executeQuery()) {
                 if (resultSet.next()) {
                     login_name = resultSet.getString("FIRST_NAME") + " " + resultSet.getString("LAST_NAME");
-                    openAdminPortal();
+                    switch (resultSet.getString("CATEGORY")){
+                        case "Administrador":
+                            openAdminPortal();
+                            break;
+                        case "Medico":
+                            openMedicoPortal();
+                            break;
+
+                    }
+
                 } else {
                     alertMessage.errorMessage("Nome de usuário ou senha incorreta");
                 }
@@ -240,9 +190,22 @@ public class HospitalController implements Initializable {
         }
     }
 
+    private void openMedicoPortal() {
+        try {
+            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("MedicoMainPortal.fxml")));
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.setTitle("Portal do Medico");
+            stage.show();
+            login_form.getScene().getWindow().hide();
+        } catch (IOException e) {
+            alertMessage.errorMessage("Erro ao abrir o portal do Medico");
+            e.printStackTrace();
+        }
+    }
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        addUsers();
     }
 }
