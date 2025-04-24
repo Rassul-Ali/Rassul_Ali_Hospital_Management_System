@@ -1,18 +1,15 @@
 package com.javafx.hospital;
 
 import javafx.application.Platform;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.chart.BarChart;
-import javafx.scene.chart.PieChart;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
@@ -39,9 +36,6 @@ public class AdminController implements Initializable {
     private ScheduledExecutorService scheduler;
 
     // FXML Components
-    @FXML
-    private PieChart admin_Doencas_graph;
-
     @FXML
     private TableView<?> admin_alta_semanal;
 
@@ -134,9 +128,6 @@ public class AdminController implements Initializable {
 
     @FXML
     private TableColumn<?, ?> admin_med_table_End;
-
-    @FXML
-    private TableColumn<?, ?> admin_med_table_End1;
 
     @FXML
     private TableColumn<?, ?> admin_med_table_End11;
@@ -232,13 +223,19 @@ public class AdminController implements Initializable {
     private Button admin_registar;
 
     @FXML
-    private Button admin_tecnicos;
+    private AnchorPane admin_registar_form;
 
     @FXML
     private Button admin_relatorio;
 
     @FXML
+    private AnchorPane admin_relatorios_from;
+
+    @FXML
     private Button admin_sair;
+
+    @FXML
+    private Button admin_tecnicos;
 
     @FXML
     private AnchorPane admin_tecnicos_form;
@@ -259,10 +256,16 @@ public class AdminController implements Initializable {
     private Label admin_user;
 
     @FXML
-    private AnchorPane barchart;
+    private ComboBox<String> registar_escolha;
 
     @FXML
-    private BarChart<?, ?> s;
+    private AnchorPane registar_estagiario;
+
+    @FXML
+    private AnchorPane registar_medicos;
+
+    @FXML
+    private AnchorPane registar_tecnico;
 
 
     @Override
@@ -272,11 +275,35 @@ public class AdminController implements Initializable {
         admin_form_text.setText("Dashboard");
         configurarTabelaMedicos();
         configurarTabelaAltas();
+        addUser();
 
         Platform.runLater(() -> {
             admin_dashboard.getStyleClass().add("selected");
             selectedButton = admin_dashboard;
         });
+    }
+
+    private void addUser() {
+        ObservableList<String> list = FXCollections.observableArrayList(Users.registar);
+        registar_escolha.setItems(list);
+        registar_escolha.getSelectionModel().selectFirst();
+    }
+
+    public void selectRegister() {
+        switch (registar_escolha.getSelectionModel().getSelectedItem()) {
+            case "Médico":
+                showRegistarMedico();
+                break;
+
+            case "Tecnico":
+                showRegistarTecnico();
+                break;
+
+            case "Estagiário":
+                showRegistarEstagiario();
+                break;
+
+        }
     }
 
     private void initTimeUpdater() {
@@ -383,9 +410,14 @@ public class AdminController implements Initializable {
             showEstagiario();
         } else if (clickedButton == admin_tecnicos) {
             showTecnico();
+        } else if (clickedButton == admin_registar) {
+            showRegistar();
+        } else if (clickedButton == admin_relatorio) {
+            showRelatorios();
         }
         // Adicione outros botões conforme necessário
     }
+
 
     private void showDashboard() {
         admin_dashboard_form.setVisible(true);
@@ -393,6 +425,8 @@ public class AdminController implements Initializable {
         admin_tecnicos_form.setVisible(false);
         admin_pacientes_form.setVisible(false);
         admin_estagiario_form.setVisible(false);
+        admin_registar_form.setVisible(false);
+        admin_relatorios_from.setVisible(false);
         admin_form_text.setText("Dashboard");
     }
 
@@ -402,6 +436,8 @@ public class AdminController implements Initializable {
         admin_tecnicos_form.setVisible(false);
         admin_pacientes_form.setVisible(false);
         admin_estagiario_form.setVisible(false);
+        admin_registar_form.setVisible(false);
+        admin_relatorios_from.setVisible(false);
         admin_form_text.setText("Médicos");
     }
 
@@ -411,24 +447,70 @@ public class AdminController implements Initializable {
         admin_medicos_form.setVisible(false);
         admin_tecnicos_form.setVisible(false);
         admin_estagiario_form.setVisible(false);
+        admin_registar_form.setVisible(false);
+        admin_relatorios_from.setVisible(false);
         admin_form_text.setText("Pacientes");
     }
 
     private void showEstagiario() {
         admin_estagiario_form.setVisible(true);
-        admin_pacientes_form.setVisible(true);
+        admin_pacientes_form.setVisible(false);
         admin_dashboard_form.setVisible(false);
         admin_medicos_form.setVisible(false);
         admin_tecnicos_form.setVisible(false);
-        admin_form_text.setText("Estagiario");
+        admin_registar_form.setVisible(false);
+        admin_relatorios_from.setVisible(false);
+        admin_form_text.setText("Estagiários");
     }
 
     private void showTecnico() {
         admin_tecnicos_form.setVisible(true);
         admin_estagiario_form.setVisible(false);
-        admin_pacientes_form.setVisible(true);
+        admin_pacientes_form.setVisible(false);
         admin_dashboard_form.setVisible(false);
         admin_medicos_form.setVisible(false);
+        admin_registar_form.setVisible(false);
+        admin_relatorios_from.setVisible(false);
         admin_form_text.setText("Tecnico");
+    }
+
+    private void showRegistar() {
+        admin_registar_form.setVisible(true);
+        admin_relatorios_from.setVisible(false);
+        admin_tecnicos_form.setVisible(false);
+        admin_estagiario_form.setVisible(false);
+        admin_pacientes_form.setVisible(false);
+        admin_dashboard_form.setVisible(false);
+        admin_medicos_form.setVisible(false);
+        admin_form_text.setText("Registar");
+    }
+
+    private void showRelatorios() {
+        admin_relatorios_from.setVisible(true);
+        admin_registar_form.setVisible(false);
+        admin_tecnicos_form.setVisible(false);
+        admin_estagiario_form.setVisible(false);
+        admin_pacientes_form.setVisible(false);
+        admin_dashboard_form.setVisible(false);
+        admin_medicos_form.setVisible(false);
+        admin_form_text.setText("Relatórios");
+    }
+
+    private void showRegistarMedico() {
+        registar_medicos.setVisible(true);
+        registar_estagiario.setVisible(false);
+        registar_tecnico.setVisible(false);
+    }
+
+    private void showRegistarTecnico() {
+        registar_tecnico.setVisible(true);
+        registar_medicos.setVisible(false);
+        registar_estagiario.setVisible(false);
+    }
+
+    private void showRegistarEstagiario() {
+        registar_estagiario.setVisible(true);
+        registar_medicos.setVisible(false);
+        registar_tecnico.setVisible(false);
     }
 }

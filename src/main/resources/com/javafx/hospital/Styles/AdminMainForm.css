@@ -57,6 +57,27 @@
 .btn-1:hover .font {
     -fx-fill: white !important;
 }
+.btn-10{
+    -fx-background-color: #E0E0E0;
+    -fx-cursor: hand;
+    -fx-text-fill: #000;
+    -fx-font-size: 16px;
+    -fx-font-family: Arial;
+    -fx-font-weight: bold;
+    -fx-border-color: #2A5CAA;
+    -fx-transition: -fx-background-color 0.3s ease, -fx-text-fill 0.3s ease;
+}
+
+.btn-10:hover{
+    -fx-background-color: linear-gradient(to bottom left, #2A5CAA,#4B8DF8);
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 10,0,0,0);
+    -fx-text-fill: white;
+}
+
+.btn-10:hover .font {
+    -fx-fill: white !important;
+}
+
 
 .btn-2{
     -fx-background-color: #E53935;
@@ -68,8 +89,23 @@
     -fx-transition: -fx-background-color 0.3s ease;
 }
 
+.btn-3{
+    -fx-background-color: #00A76D;
+    -fx-cursor: hand;
+    -fx-text-fill: #fff;
+    -fx-font-size: 16px;
+    -fx-font-family: Arial;
+    -fx-font-weight: bold;
+    -fx-transition: -fx-background-color 0.3s ease;
+}
+
+
 .btn-2:hover{
     -fx-background-color: linear-gradient(to bottom left, #E53935 ,#FF0000);
+}
+
+.btn-3:hover{
+    -fx-background-color: #32CD32;
 }
 
 .btn-2:hover .font {
