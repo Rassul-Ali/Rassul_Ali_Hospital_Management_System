@@ -12,12 +12,15 @@ public class HospitalApplication extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HospitalApplication.class.getResource("loginRegister-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        stage.setTitle("Alpha3 Login do Administrador");
+        stage.setTitle("Alpha3 Login");
         stage.setScene(scene);
+        stage.setScene(scene);
+        stage.setResizable(false);
         stage.show();
     }
 
     public static void main(String[] args) {
         launch();
+        System.exit(1);
     }
 }

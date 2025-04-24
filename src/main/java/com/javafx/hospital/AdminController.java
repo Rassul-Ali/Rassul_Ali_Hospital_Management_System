@@ -275,7 +275,7 @@ public class AdminController implements Initializable {
         admin_form_text.setText("Dashboard");
         configurarTabelaMedicos();
         configurarTabelaAltas();
-        addUser();
+        addRegistar();
 
         Platform.runLater(() -> {
             admin_dashboard.getStyleClass().add("selected");
@@ -283,7 +283,7 @@ public class AdminController implements Initializable {
         });
     }
 
-    private void addUser() {
+    private void addRegistar() {
         ObservableList<String> list = FXCollections.observableArrayList(Users.registar);
         registar_escolha.setItems(list);
         registar_escolha.getSelectionModel().selectFirst();

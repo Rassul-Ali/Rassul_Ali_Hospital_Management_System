@@ -26,10 +26,8 @@ public class HospitalController implements Initializable {
     @FXML
     private CheckBox login_checkBox;
 
-
     @FXML
     private BorderPane login_form;
-
 
     @FXML
     private Button login_loginBtn;
@@ -46,37 +44,12 @@ public class HospitalController implements Initializable {
     @FXML
     private StackPane main_form;
 
-    @FXML
-    private CheckBox register_checkBox;
-
-    @FXML
-    private TextField register_email;
-
-    @FXML
-    private BorderPane register_form;
-
-    @FXML
-    private Hyperlink register_loginAqui;
-
-    @FXML
-    private PasswordField register_password;
-
-    @FXML
-    private Button register_registar;
-
-    @FXML
-    private TextField register_showPassword;
-
-    @FXML
-    private TextField register_username;
-
     //DataBase Variables
     private Connection connection;
     private PreparedStatement preparedStatement;
     private ResultSet resultSet;
 
     private AlertMessage alertMessage = new AlertMessage();
-    private Users users = new Users();
 
     protected static String login_name;
 
@@ -182,8 +155,11 @@ public class HospitalController implements Initializable {
             Stage stage = new Stage();
             stage.setScene(new Scene(root));
             stage.setTitle("Portal do Administrador");
+            stage.setMinWidth(1675);
+            stage.setMinHeight(900);
+            stage.setMaximized(true);
             stage.show();
-            login_form.getScene().getWindow().hide();
+            closeCurrentWindow();
         } catch (IOException e) {
             alertMessage.errorMessage("Erro ao abrir o portal do administrador");
             e.printStackTrace();
@@ -196,8 +172,11 @@ public class HospitalController implements Initializable {
             Stage stage = new Stage();
             stage.setScene(new Scene(root));
             stage.setTitle("Portal do Medico");
+            stage.setMinWidth(1675);
+            stage.setMinHeight(900);
+            stage.setMaximized(true);
             stage.show();
-            login_form.getScene().getWindow().hide();
+            closeCurrentWindow();
         } catch (IOException e) {
             alertMessage.errorMessage("Erro ao abrir o portal do Medico");
             e.printStackTrace();
