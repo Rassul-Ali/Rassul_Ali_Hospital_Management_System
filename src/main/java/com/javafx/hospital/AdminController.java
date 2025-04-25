@@ -9,7 +9,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.chart.BarChart;
+import javafx.scene.chart.PieChart;
 import javafx.scene.control.*;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
@@ -55,7 +58,25 @@ public class AdminController implements Initializable {
     private TableColumn<?, ?> admin_alta_semanal_sexo;
 
     @FXML
+    private BarChart<?, ?> admin_bar_paci_internados;
+
+    @FXML
+    private Button admin_btn_estagiario;
+
+    @FXML
+    private Button admin_btn_pacientes;
+
+    @FXML
+    private Button admin_btn_tecnicos;
+
+    @FXML
+    private PieChart admin_chart_doencas;
+
+    @FXML
     private Button admin_conta;
+
+    @FXML
+    private AnchorPane admin_conta_form;
 
     @FXML
     private Button admin_dashboard;
@@ -67,10 +88,46 @@ public class AdminController implements Initializable {
     private Label admin_date;
 
     @FXML
+    private TableView<?> admin_esta_table;
+
+    @FXML
+    private TableColumn<?, ?> admin_esta_table_apelido;
+
+    @FXML
+    private TableColumn<?, ?> admin_esta_table_celular;
+
+    @FXML
+    private TableColumn<?, ?> admin_esta_table_curso;
+
+    @FXML
+    private TableColumn<?, ?> admin_esta_table_endero;
+
+    @FXML
+    private TableColumn<?, ?> admin_esta_table_idade;
+
+    @FXML
+    private TableColumn<?, ?> admin_esta_table_idade1;
+
+    @FXML
+    private TableColumn<?, ?> admin_esta_table_intituto;
+
+    @FXML
+    private TableColumn<?, ?> admin_esta_table_pNome;
+
+    @FXML
+    private TableColumn<?, ?> admin_esta_table_sexo;
+
+    @FXML
     private Button admin_estagiario;
 
     @FXML
     private AnchorPane admin_estagiario_form;
+
+    @FXML
+    private ComboBox<?> admin_filtar_estagiario;
+
+    @FXML
+    private ComboBox<?> admin_filtro_pacientes;
 
     @FXML
     private Label admin_form_text;
@@ -97,6 +154,15 @@ public class AdminController implements Initializable {
     private TableColumn<?, ?> admin_interna_semanal_sexo;
 
     @FXML
+    private TextField admin_label_estagiario;
+
+    @FXML
+    private TextField admin_label_pacientes;
+
+    @FXML
+    private TextField admin_label_tecnicos;
+
+    @FXML
     private StackPane admin_main;
 
     @FXML
@@ -106,112 +172,58 @@ public class AdminController implements Initializable {
     private TableView<?> admin_med_table;
 
     @FXML
-    private TableView<?> admin_med_table1;
-
-    @FXML
-    private TableView<?> admin_med_table11;
-
-    @FXML
-    private TableView<?> admin_med_table111;
-
-    @FXML
     private TableColumn<?, ?> admin_med_table_Celular;
-
-    @FXML
-    private TableColumn<?, ?> admin_med_table_Celular1;
-
-    @FXML
-    private TableColumn<?, ?> admin_med_table_Celular11;
-
-    @FXML
-    private TableColumn<?, ?> admin_med_table_Celular111;
 
     @FXML
     private TableColumn<?, ?> admin_med_table_End;
 
     @FXML
-    private TableColumn<?, ?> admin_med_table_End11;
-
-    @FXML
-    private TableColumn<?, ?> admin_med_table_End111;
-
-    @FXML
     private TableColumn<?, ?> admin_med_table_Espc;
-
-    @FXML
-    private TableColumn<?, ?> admin_med_table_Espc1;
-
-    @FXML
-    private TableColumn<?, ?> admin_med_table_Espc11;
-
-    @FXML
-    private TableColumn<?, ?> admin_med_table_Espc111;
-
-    @FXML
-    private TableColumn<?, ?> admin_med_table_ID;
-
-    @FXML
-    private TableColumn<?, ?> admin_med_table_ID1;
-
-    @FXML
-    private TableColumn<?, ?> admin_med_table_ID11;
-
-    @FXML
-    private TableColumn<?, ?> admin_med_table_ID111;
 
     @FXML
     private TableColumn<?, ?> admin_med_table_Idade;
 
     @FXML
-    private TableColumn<?, ?> admin_med_table_Idade1;
-
-    @FXML
-    private TableColumn<?, ?> admin_med_table_Idade11;
-
-    @FXML
-    private TableColumn<?, ?> admin_med_table_Idade111;
-
-    @FXML
-    private TableColumn<?, ?> admin_med_table_Nome;
-
-    @FXML
-    private TableColumn<?, ?> admin_med_table_Nome1;
-
-    @FXML
-    private TableColumn<?, ?> admin_med_table_Nome11;
-
-    @FXML
-    private TableColumn<?, ?> admin_med_table_Nome111;
-
-    @FXML
     private TableColumn<?, ?> admin_med_table_Sexo;
 
     @FXML
-    private TableColumn<?, ?> admin_med_table_Sexo1;
-
-    @FXML
-    private TableColumn<?, ?> admin_med_table_Sexo11;
-
-    @FXML
-    private TableColumn<?, ?> admin_med_table_Sexo111;
+    private TableColumn<?, ?> admin_med_table_apelido;
 
     @FXML
     private TableColumn<?, ?> admin_med_table_emal;
 
     @FXML
-    private TableColumn<?, ?> admin_med_table_emal1;
-
-    @FXML
-    private TableColumn<?, ?> admin_med_table_emal11;
-
-    @FXML
-    private TableColumn<?, ?> admin_med_table_emal111;
+    private TableColumn<?, ?> admin_med_table_pNome;
 
     @FXML
     private Button admin_medicos;
 
     @FXML
     private AnchorPane admin_medicos_form;
+
+    @FXML
+    private TableView<?> admin_pacie_table;
+
+    @FXML
+    private TableColumn<?, ?> admin_pacie_table_Idade;
+
+    @FXML
+    private TableColumn<?, ?> admin_pacie_table_Sexo;
+
+    @FXML
+    private TableColumn<?, ?> admin_pacie_table_celular;
+
+    @FXML
+    private TableColumn<?, ?> admin_pacie_table_endereco;
+
+    @FXML
+    private TableColumn<?, ?> admin_pacie_table_nome;
+
+    @FXML
+    private TableColumn<?, ?> admin_pacie_table_status;
+
+    @FXML
+    private TableColumn<?, ?> admin_pacie_table_trabalho;
 
     @FXML
     private Button admin_pacientes;
@@ -229,7 +241,7 @@ public class AdminController implements Initializable {
     private Button admin_relatorio;
 
     @FXML
-    private AnchorPane admin_relatorios_from;
+    private AnchorPane admin_relatorios_form;
 
     @FXML
     private Button admin_sair;
@@ -239,6 +251,33 @@ public class AdminController implements Initializable {
 
     @FXML
     private AnchorPane admin_tecnicos_form;
+
+    @FXML
+    private TableView<?> admin_tecnicos_table;
+
+    @FXML
+    private TableColumn<?, ?> admin_tecnicos_table_apelido;
+
+    @FXML
+    private TableColumn<?, ?> admin_tecnicos_table_celular;
+
+    @FXML
+    private TableColumn<?, ?> admin_tecnicos_table_email;
+
+    @FXML
+    private TableColumn<?, ?> admin_tecnicos_table_endereco;
+
+    @FXML
+    private TableColumn<?, ?> admin_tecnicos_table_especializacao;
+
+    @FXML
+    private TableColumn<?, ?> admin_tecnicos_table_idade;
+
+    @FXML
+    private TableColumn<?, ?> admin_tecnicos_table_pNome;
+
+    @FXML
+    private TableColumn<?, ?> admin_tecnicos_table_sexo;
 
     @FXML
     private Label admin_total_medicos;
@@ -256,6 +295,195 @@ public class AdminController implements Initializable {
     private Label admin_user;
 
     @FXML
+    private Label conta_data_criacao;
+
+    @FXML
+    private Label conta_data_nascimento;
+
+    @FXML
+    private Label conta_email;
+
+    @FXML
+    private ImageView conta_image;
+
+    @FXML
+    private Label conta_nome;
+
+    @FXML
+    private Label conta_nome_usuario;
+
+    @FXML
+    private Label conta_palavra_passe;
+
+    @FXML
+    private TextField editar_apelido;
+
+    @FXML
+    private PasswordField editar_confirmar_palavra;
+
+    @FXML
+    private TextField editar_email;
+
+    @FXML
+    private ImageView editar_image;
+
+    @FXML
+    private Button editar_importar_image;
+
+    @FXML
+    private TextField editar_pNome;
+
+    @FXML
+    private PasswordField editar_palavra_passe;
+
+    @FXML
+    private Button editar_salvar;
+
+    @FXML
+    private Button pesquisa_btn_medico;
+
+    @FXML
+    private ComboBox<?> pesquisa_filtrar_medico;
+
+    @FXML
+    private TextField pesquisa_label_medico;
+
+    @FXML
+    private TextField reg_estag_BI;
+
+    @FXML
+    private TextField reg_estag_apelido;
+
+    @FXML
+    private Button reg_estag_cancelar;
+
+    @FXML
+    private TextField reg_estag_celular;
+
+    @FXML
+    private PasswordField reg_estag_confirmar_palavra;
+
+    @FXML
+    private TextField reg_estag_curso;
+
+    @FXML
+    private DatePicker reg_estag_date;
+
+    @FXML
+    private TextField reg_estag_endereco;
+
+    @FXML
+    private TextField reg_estag_instituto;
+
+    @FXML
+    private TextField reg_estag_nome_usuario;
+
+    @FXML
+    private TextField reg_estag_pNome;
+
+    @FXML
+    private PasswordField reg_estag_palavra;
+
+    @FXML
+    private Button reg_estag_registar;
+
+    @FXML
+    private ComboBox<?> reg_estag_sexo;
+
+    @FXML
+    private ComboBox<?> reg_estag_status;
+
+    @FXML
+    private TextField reg_med_BI;
+
+    @FXML
+    private TextField reg_med_Espec;
+
+    @FXML
+    private TextField reg_med_apelido;
+
+    @FXML
+    private Button reg_med_cancelar;
+
+    @FXML
+    private TextField reg_med_celular;
+
+    @FXML
+    private PasswordField reg_med_confirmar_palavra;
+
+    @FXML
+    private DatePicker reg_med_datePicker;
+
+    @FXML
+    private TextField reg_med_email;
+
+    @FXML
+    private TextField reg_med_endereco;
+
+    @FXML
+    private ComboBox<?> reg_med_genero;
+
+    @FXML
+    private TextField reg_med_nome_usuario;
+
+    @FXML
+    private TextField reg_med_pNome;
+
+    @FXML
+    private PasswordField reg_med_palavra_passe;
+
+    @FXML
+    private Button reg_med_registar;
+
+    @FXML
+    private ComboBox<?> reg_med_status;
+
+    @FXML
+    private TextField reg_tecnico_BI;
+
+    @FXML
+    private TextField reg_tecnico_apelido;
+
+    @FXML
+    private Button reg_tecnico_cancelar;
+
+    @FXML
+    private TextField reg_tecnico_celular;
+
+    @FXML
+    private PasswordField reg_tecnico_confirmar_palavra;
+
+    @FXML
+    private DatePicker reg_tecnico_date;
+
+    @FXML
+    private TextField reg_tecnico_email;
+
+    @FXML
+    private TextField reg_tecnico_ender;
+
+    @FXML
+    private TextField reg_tecnico_espec;
+
+    @FXML
+    private ComboBox<?> reg_tecnico_genero;
+
+    @FXML
+    private TextField reg_tecnico_nome_usuario;
+
+    @FXML
+    private TextField reg_tecnico_pNome;
+
+    @FXML
+    private PasswordField reg_tecnico_palavra;
+
+    @FXML
+    private Button reg_tecnico_registar;
+
+    @FXML
+    private ComboBox<?> reg_tecnico_status;
+
+    @FXML
     private ComboBox<String> registar_escolha;
 
     @FXML
@@ -266,6 +494,34 @@ public class AdminController implements Initializable {
 
     @FXML
     private AnchorPane registar_tecnico;
+
+    @FXML
+    private Button relatorio_lista_doencas;
+
+    @FXML
+    private Button relatorio_lista_estagiario;
+
+    @FXML
+    private Button relatorio_lista_medico;
+
+    @FXML
+    private Button relatorio_lista_pa_altas;
+
+    @FXML
+    private Button relatorio_lista_pa_curado;
+
+    @FXML
+    private Button relatorio_lista_pa_falecido;
+
+    @FXML
+    private Button relatorio_lista_pa_inte;
+
+    @FXML
+    private Button relatorio_lista_paciente;
+
+    @FXML
+    private Button relatorio_lista_tecnico;
+
 
 
     @Override
@@ -350,8 +606,8 @@ public class AdminController implements Initializable {
 
         admin_med_table.widthProperty().addListener((obs, oldVal, newVal) -> {
             if (newVal.doubleValue() > 0) {
-                admin_med_table_ID.setPrefWidth(newVal.doubleValue() * 0.08);
-                admin_med_table_Nome.setPrefWidth(newVal.doubleValue() * 0.15);
+                admin_med_table_pNome.setPrefWidth(newVal.doubleValue() * 0.08);
+                admin_med_table_apelido.setPrefWidth(newVal.doubleValue() * 0.15);
                 admin_med_table_Sexo.setPrefWidth(newVal.doubleValue() * 0.08);
                 admin_med_table_Celular.setPrefWidth(newVal.doubleValue() * 0.12);
                 admin_med_table_emal.setPrefWidth(newVal.doubleValue() * 0.20);
@@ -414,10 +670,11 @@ public class AdminController implements Initializable {
             showRegistar();
         } else if (clickedButton == admin_relatorio) {
             showRelatorios();
+        } else if (clickedButton == admin_conta) {
+            showConta();
         }
         // Adicione outros botões conforme necessário
     }
-
 
     private void showDashboard() {
         admin_dashboard_form.setVisible(true);
@@ -426,7 +683,8 @@ public class AdminController implements Initializable {
         admin_pacientes_form.setVisible(false);
         admin_estagiario_form.setVisible(false);
         admin_registar_form.setVisible(false);
-        admin_relatorios_from.setVisible(false);
+        admin_relatorios_form.setVisible(false);
+        admin_conta_form.setVisible(false);
         admin_form_text.setText("Dashboard");
     }
 
@@ -437,7 +695,8 @@ public class AdminController implements Initializable {
         admin_pacientes_form.setVisible(false);
         admin_estagiario_form.setVisible(false);
         admin_registar_form.setVisible(false);
-        admin_relatorios_from.setVisible(false);
+        admin_relatorios_form.setVisible(false);
+        admin_conta_form.setVisible(false);
         admin_form_text.setText("Médicos");
     }
 
@@ -448,7 +707,8 @@ public class AdminController implements Initializable {
         admin_tecnicos_form.setVisible(false);
         admin_estagiario_form.setVisible(false);
         admin_registar_form.setVisible(false);
-        admin_relatorios_from.setVisible(false);
+        admin_relatorios_form.setVisible(false);
+        admin_conta_form.setVisible(false);
         admin_form_text.setText("Pacientes");
     }
 
@@ -459,7 +719,8 @@ public class AdminController implements Initializable {
         admin_medicos_form.setVisible(false);
         admin_tecnicos_form.setVisible(false);
         admin_registar_form.setVisible(false);
-        admin_relatorios_from.setVisible(false);
+        admin_relatorios_form.setVisible(false);
+        admin_conta_form.setVisible(false);
         admin_form_text.setText("Estagiários");
     }
 
@@ -470,30 +731,45 @@ public class AdminController implements Initializable {
         admin_dashboard_form.setVisible(false);
         admin_medicos_form.setVisible(false);
         admin_registar_form.setVisible(false);
-        admin_relatorios_from.setVisible(false);
+        admin_relatorios_form.setVisible(false);
+        admin_conta_form.setVisible(false);
         admin_form_text.setText("Tecnico");
     }
 
     private void showRegistar() {
         admin_registar_form.setVisible(true);
-        admin_relatorios_from.setVisible(false);
+        admin_relatorios_form.setVisible(false);
         admin_tecnicos_form.setVisible(false);
         admin_estagiario_form.setVisible(false);
         admin_pacientes_form.setVisible(false);
         admin_dashboard_form.setVisible(false);
         admin_medicos_form.setVisible(false);
+        admin_conta_form.setVisible(false);
         admin_form_text.setText("Registar");
     }
 
     private void showRelatorios() {
-        admin_relatorios_from.setVisible(true);
+        admin_relatorios_form.setVisible(true);
         admin_registar_form.setVisible(false);
         admin_tecnicos_form.setVisible(false);
         admin_estagiario_form.setVisible(false);
         admin_pacientes_form.setVisible(false);
         admin_dashboard_form.setVisible(false);
         admin_medicos_form.setVisible(false);
+        admin_conta_form.setVisible(false);
         admin_form_text.setText("Relatórios");
+    }
+
+    private void showConta() {
+        admin_conta_form.setVisible(true);
+        admin_dashboard_form.setVisible(false);
+        admin_medicos_form.setVisible(false);
+        admin_tecnicos_form.setVisible(false);
+        admin_pacientes_form.setVisible(false);
+        admin_estagiario_form.setVisible(false);
+        admin_registar_form.setVisible(false);
+        admin_relatorios_form.setVisible(false);
+        admin_form_text.setText("Dashboard");
     }
 
     private void showRegistarMedico() {
