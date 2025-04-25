@@ -769,7 +769,7 @@ public class AdminController implements Initializable {
         admin_estagiario_form.setVisible(false);
         admin_registar_form.setVisible(false);
         admin_relatorios_form.setVisible(false);
-        admin_form_text.setText("Dashboard");
+        admin_form_text.setText("Conta");
     }
 
     private void showRegistarMedico() {
