@@ -622,7 +622,7 @@
                                           <String fx:value="textfield-1" />
                                        </styleClass>
                                     </ComboBox>
-                                    <AnchorPane fx:id="registar_medicos" layoutX="24.0" layoutY="80.0" prefHeight="200.0" prefWidth="200.0" visible="false" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="80.0">
+                                    <AnchorPane fx:id="registar_medicos" layoutX="24.0" layoutY="80.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="80.0">
                                        <styleClass>
                                           <String fx:value="white-bg" />
                                           <String fx:value="border" />
@@ -679,7 +679,7 @@
                                                 <String fx:value="white-bg" />
                                              </styleClass>
                                           </TextField>
-                                          <ComboBox fx:id="reg_med_genero" layoutX="103.0" layoutY="402.0" prefHeight="24.0" prefWidth="257.0" promptText="Genero" AnchorPane.leftAnchor="100.0" AnchorPane.topAnchor="401.0">
+                                          <ComboBox fx:id="reg_med_genero" layoutX="103.0" layoutY="402.0" prefHeight="24.0" prefWidth="257.0" promptText="Sexo" AnchorPane.leftAnchor="100.0" AnchorPane.topAnchor="401.0">
                                              <styleClass>
                                                 <String fx:value="white-bg" />
                                                 <String fx:value="textfield-1" />
@@ -779,7 +779,7 @@
                                                 <String fx:value="white-bg" />
                                              </styleClass>
                                           </TextField>
-                                          <ComboBox fx:id="reg_tecnico_genero" layoutX="103.0" layoutY="402.0" prefHeight="24.0" prefWidth="257.0" promptText="Genero" AnchorPane.leftAnchor="100.0" AnchorPane.topAnchor="401.0">
+                                          <ComboBox fx:id="reg_tecnico_genero" layoutX="103.0" layoutY="402.0" prefHeight="24.0" prefWidth="257.0" promptText="Sexo" AnchorPane.leftAnchor="100.0" AnchorPane.topAnchor="401.0">
                                              <styleClass>
                                                 <String fx:value="white-bg" />
                                                 <String fx:value="textfield-1" />
@@ -822,7 +822,7 @@
                                           </PasswordField>
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane fx:id="registar_estagiario" layoutX="21.0" layoutY="91.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="80.0">
+                                    <AnchorPane fx:id="registar_estagiario" layoutX="21.0" layoutY="91.0" prefHeight="200.0" prefWidth="200.0" visible="false" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="80.0">
                                        <styleClass>
                                           <String fx:value="white-bg" />
                                           <String fx:value="border" />
@@ -1126,7 +1126,7 @@
                                                     <RowConstraints maxHeight="128.0" minHeight="0.0" prefHeight="35.0" vgrow="SOMETIMES" />
                                                   </rowConstraints>
                                                    <children>
-                                                      <Button fx:id="editar_importar_image" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="28.0" prefWidth="198.0" styleClass="btn-4" text="Importar" GridPane.rowIndex="1">
+                                                      <Button fx:id="editar_importar_image" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#setPhoto" prefHeight="28.0" prefWidth="198.0" styleClass="btn-4" text="Importar" GridPane.rowIndex="1">
                                                          <graphic>
                                                             <FontAwesomeIconView glyphName="UPLOAD" size="1.5em" styleClass="font" />
                                                          </graphic>

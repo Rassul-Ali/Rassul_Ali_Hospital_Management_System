@@ -207,10 +207,8 @@
     -fx-cursor: hand;
     -fx-background-color: linear-gradient(to bottom right, #188ba7, #306090);
     -fx-fill: white !important
-
 }
 
 .search:hover .font{
     -fx-fill: white !important
-
 }

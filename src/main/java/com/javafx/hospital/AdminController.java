@@ -12,12 +12,16 @@ import javafx.scene.Scene;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.PieChart;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -388,7 +392,7 @@ public class AdminController implements Initializable {
     private Button reg_estag_registar;
 
     @FXML
-    private ComboBox<?> reg_estag_sexo;
+    private ComboBox<String> reg_estag_sexo;
 
     @FXML
     private ComboBox<?> reg_estag_status;
@@ -421,7 +425,7 @@ public class AdminController implements Initializable {
     private TextField reg_med_endereco;
 
     @FXML
-    private ComboBox<?> reg_med_genero;
+    private ComboBox<String> reg_med_genero;
 
     @FXML
     private TextField reg_med_nome_usuario;
@@ -466,7 +470,7 @@ public class AdminController implements Initializable {
     private TextField reg_tecnico_espec;
 
     @FXML
-    private ComboBox<?> reg_tecnico_genero;
+    private ComboBox<String> reg_tecnico_genero;
 
     @FXML
     private TextField reg_tecnico_nome_usuario;
@@ -532,6 +536,7 @@ public class AdminController implements Initializable {
         configurarTabelaMedicos();
         configurarTabelaAltas();
         addRegistar();
+        setComboSexo();
 
         Platform.runLater(() -> {
             admin_dashboard.getStyleClass().add("selected");
@@ -632,7 +637,7 @@ public class AdminController implements Initializable {
         });
     }
 
-    public void setName() {
+    private void setName() {
         admin_user.setText(HospitalController.login_name);
     }
 
@@ -788,5 +793,23 @@ public class AdminController implements Initializable {
         registar_estagiario.setVisible(true);
         registar_medicos.setVisible(false);
         registar_tecnico.setVisible(false);
+    }
+
+    private void setComboSexo(){
+        ObservableList<String> list = FXCollections.observableArrayList(Users.sexo);
+        reg_estag_sexo.setItems(list);
+        reg_med_genero.setItems(list);
+        reg_tecnico_genero.setItems(list);
+    }
+
+    public void setPhoto(ActionEvent event){
+        FileChooser fc = new FileChooser();
+        fc.getExtensionFilters().addAll( new FileChooser.ExtensionFilter("Image File", "*.png"));
+        File selectedFile = fc.showOpenDialog(null);
+        try {
+            editar_image.setImage(new Image(selectedFile.toURL().openStream()));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

@@ -2,12 +2,14 @@ package com.javafx.hospital;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
@@ -86,7 +88,7 @@ public class HospitalController implements Initializable {
         }
 
         // Autenticação
-        String sql = "SELECT FIRST_NAME, LAST_NAME, CATEGORY FROM login WHERE USERNAME = ? AND PASSWORD = ?";
+         String sql = "SELECT FIRST_NAME, LAST_NAME,USERNAME,PASSWORD,CATEGORY FROM login WHERE USERNAME = ? AND PASSWORD = ?";
 
         try (Connection connection = DataBase.connectDB();
              PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
@@ -96,15 +98,22 @@ public class HospitalController implements Initializable {
 
             try (ResultSet resultSet = preparedStatement.executeQuery()) {
                 if (resultSet.next()) {
-                    login_name = resultSet.getString("FIRST_NAME") + " " + resultSet.getString("LAST_NAME");
-                    switch (resultSet.getString("CATEGORY")){
-                        case "Administrador":
-                            openAdminPortal();
-                            break;
-                        case "Medico":
-                            openMedicoPortal();
-                            break;
+                    if(resultSet.getString("USERNAME").equals(login_username.getText()) &&
+                            resultSet.getString("PASSWORD").equals(login_password.getText()) &&
+                            resultSet.getString("PASSWORD").equals(login_showPassword.getText())){
+                        login_name = resultSet.getString("FIRST_NAME") + " " + resultSet.getString("LAST_NAME");
+                        switch (resultSet.getString("CATEGORY")){
+                            case "Administrador":
+                                openAdminPortal();
+                                break;
+                            case "Medico":
+                                openMedicoPortal();
+                                break;
 
+                        }
+                    }else{
+                        alertMessage.errorMessage("Nome de usuário ou senha incorreta");
+                        return;
                     }
 
                 } else {
