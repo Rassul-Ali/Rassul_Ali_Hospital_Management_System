@@ -13,7 +13,12 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <junit.version>5.10.2</junit.version>
     </properties>
-
+    <repositories>
+        <repository>
+            <id>jasperreports</id>
+            <url>https://jaspersoft.jfrog.io/jaspersoft/third-party-ce-artifacts/</url>
+        </repository>
+    </repositories>
     <dependencies>
 
         <dependency>
@@ -45,31 +50,47 @@
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
-        <!-- JasperReports Core -->
+        <!-- Core JasperReports -->
         <dependency>
             <groupId>net.sf.jasperreports</groupId>
             <artifactId>jasperreports</artifactId>
-            <version>6.20.0</version> <!-- Versão mais recente -->
+            <version>7.0.2</version>
         </dependency>
 
-        <!-- Formatos de exportação (opcional) -->
+        <!-- PDF Export -->
         <dependency>
             <groupId>net.sf.jasperreports</groupId>
-            <artifactId>jasperreports-functions</artifactId>
-            <version>6.20.0</version>
+            <artifactId>jasperreports-pdf</artifactId>
+            <version>7.0.2</version>
         </dependency>
+
+        <!-- Excel Export (XLSX) -->
+
+
+        <!-- Font Support -->
         <dependency>
             <groupId>net.sf.jasperreports</groupId>
             <artifactId>jasperreports-fonts</artifactId>
-            <version>6.20.0</version>
+            <version>7.0.2</version>
         </dependency>
 
-        <!-- Para exportar para PDF -->
+        <!-- Required Dependencies -->
         <dependency>
-            <groupId>com.lowagie</groupId>
-            <artifactId>itext</artifactId>
-            <version>2.1.7</version>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.17.1</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-collections4</artifactId>
+            <version>4.4</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-beanutils</groupId>
+            <artifactId>commons-beanutils</artifactId>
+            <version>1.9.4</version>
+        </dependency>
+
     </dependencies>
 
     <build>
