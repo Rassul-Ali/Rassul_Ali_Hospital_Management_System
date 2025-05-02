@@ -637,9 +637,7 @@ public class AdminController implements Initializable {
         });
     }
 
-    private void setName() {
-        admin_user.setText(HospitalController.login_name);
-    }
+    private void setName() { admin_user.setText(HospitalController.getUser_name()); }
 
     private void handleButtonSelection(Button clickedButton) {
         // Se o botão clicado já está selecionado, não faz nada
@@ -812,4 +810,6 @@ public class AdminController implements Initializable {
             throw new RuntimeException(e);
         }
     }
+
+
 }

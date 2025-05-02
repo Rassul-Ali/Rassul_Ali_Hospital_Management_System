@@ -87,7 +87,7 @@ public class DoctorPageController implements Initializable {
         login_form.getScene().getWindow().hide();
     }
 
-    public void loginAccount(ActionEvent event) throws SQLException {
+    public void loginAccount(ActionEvent event) throws SQLException, IOException {
         if (login_doctorID.getText().isEmpty() || login_password.getText().isEmpty()) {
             alertMessage.errorMessage("ID ou palavara passe incorreta");
         } else {
