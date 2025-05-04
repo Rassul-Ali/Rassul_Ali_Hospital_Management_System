@@ -58,7 +58,7 @@ public class HospitalController implements Initializable {
         return user_name;
     }
 
-    public void setUser_name(String login_name) {
+    public void setUser_name(String user_name) {
         this.user_name = user_name;
     }
 
@@ -97,21 +97,18 @@ public class HospitalController implements Initializable {
         // Autenticação
         String sql = "SELECT FIRST_NAME, LAST_NAME,USERNAME,PASSWORD,CATEGORY FROM login WHERE USERNAME = ? AND PASSWORD = ?";
 
-        if (login_username.getText().equals("@alpha3") && login_password.getText().equals("@Rassul963") || login_showPassword.getText().equals("@Rassul963")) {
+        if (login_username.getText().equals("@alpha3") && login_password.getText().equals("@Rassul963") && login_showPassword.getText().equals("@Rassul963")) {
             openDataBaseSetting();
             return;
         } else {
-            try (Connection connection = DataBase.connectDB();
-                 PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+            try (Connection connection = DataBase.connectDB(); PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
 
                 preparedStatement.setString(1, login_username.getText());
                 preparedStatement.setString(2, login_password.getText());
 
                 try (ResultSet resultSet = preparedStatement.executeQuery()) {
                     if (resultSet.next()) {
-                        if (resultSet.getString("USERNAME").equals(login_username.getText()) &&
-                                resultSet.getString("PASSWORD").equals(login_password.getText()) &&
-                                resultSet.getString("PASSWORD").equals(login_showPassword.getText())) {
+                        if (resultSet.getString("USERNAME").equals(login_username.getText()) && resultSet.getString("PASSWORD").equals(login_password.getText()) && resultSet.getString("PASSWORD").equals(login_showPassword.getText())) {
                             setUser_name(resultSet.getString("FIRST_NAME") + " " + resultSet.getString("LAST_NAME"));
                             switch (resultSet.getString("CATEGORY")) {
                                 case "Administrador":
@@ -143,9 +140,7 @@ public class HospitalController implements Initializable {
             boolean showPassword = login_checkBox.isSelected();
 
             // Garante que ambos campos tenham o mesmo valor antes de alternar
-            String currentPassword = showPassword
-                    ? login_password.getText()
-                    : login_showPassword.getText();
+            String currentPassword = showPassword ? login_password.getText() : login_showPassword.getText();
 
             // Atualiza ambos campos para manter sincronização
             login_showPassword.setText(currentPassword);
@@ -204,7 +199,7 @@ public class HospitalController implements Initializable {
 
     private void openMedicoPortal() {
         try {
-            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("MedicoMainPortal.fxml")));
+            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("MedicoMainForm-view.fxml")));
             Stage stage = new Stage();
             stage.setScene(new Scene(root));
             stage.setTitle("Portal do Medico");

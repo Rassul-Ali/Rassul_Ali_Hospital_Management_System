@@ -30,7 +30,6 @@ public class DataBase {
         String passwordE = passwordD.readUTF();
         passwordD.close();
 
-
         return DriverManager.getConnection(urlE, userE, passwordE);
     }
 }

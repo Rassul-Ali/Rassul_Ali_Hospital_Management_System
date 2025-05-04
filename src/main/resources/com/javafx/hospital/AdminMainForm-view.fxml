@@ -36,7 +36,7 @@
                     <left>
                         <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="topPane" stylesheets="@Styles/AdminMainForm.css" BorderPane.alignment="CENTER">
                             <children>
-                                <FontAwesomeIconView fill="#2a5caa" glyphName="HOSPITAL_ALT" layoutX="70.0" layoutY="81.0" size="6em" />
+                                <FontAwesomeIconView fill="#2a5caa" glyphName="H_SQUARE" layoutX="70.0" layoutY="81.0" size="6em" />
                                 <Label layoutX="48.0" layoutY="104.0" text="S.G.H Alpha3">
                                     <font>
                                         <Font name="System Bold" size="14.0" />
