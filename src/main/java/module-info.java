@@ -6,8 +6,6 @@ module com.javafx.hospital {
     requires net.sf.jasperreports.core;
 
 
-    opens com.javafx.hospital to javafx.fxml;
-    exports com.javafx.hospital;
     exports com.javafx.hospital.Controller;
     opens com.javafx.hospital.Controller to javafx.fxml;
     exports com.javafx.hospital.DAO;
