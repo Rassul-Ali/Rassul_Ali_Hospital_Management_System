@@ -1,5 +1,7 @@
-package com.javafx.hospital;
+package com.javafx.hospital.Controller;
 
+import com.javafx.hospital.Alerts.AlertMessage;
+import com.javafx.hospital.Model.Users;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -21,7 +23,6 @@ import javafx.stage.Stage;
 
 import java.io.File;
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -545,7 +546,7 @@ public class AdminController implements Initializable {
     }
 
     private void addRegistar() {
-        ObservableList<String> list = FXCollections.observableArrayList(Users.registar);
+        ObservableList<String> list = FXCollections.observableArrayList(Users.getRegistar());
         registar_escolha.setItems(list);
         registar_escolha.getSelectionModel().selectFirst();
     }
@@ -593,7 +594,7 @@ public class AdminController implements Initializable {
         shutdownScheduler();
 
         try {
-            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("loginRegister-view.fxml")));
+            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/com/javafx/hospital/Views/loginRegister-view.fxml")));
             Stage stage = new Stage();
             stage.setScene(new Scene(root));
             stage.setTitle("Alpha3 Login");
@@ -794,7 +795,7 @@ public class AdminController implements Initializable {
     }
 
     private void setComboSexo(){
-        ObservableList<String> list = FXCollections.observableArrayList(Users.sexo);
+        ObservableList<String> list = FXCollections.observableArrayList(Users.getSexo());
         reg_estag_sexo.setItems(list);
         reg_med_genero.setItems(list);
         reg_tecnico_genero.setItems(list);

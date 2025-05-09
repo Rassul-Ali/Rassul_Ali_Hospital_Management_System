@@ -1,5 +1,7 @@
-package com.javafx.hospital;
+package com.javafx.hospital.Controller;
 
+import com.javafx.hospital.Alerts.AlertMessage;
+import com.javafx.hospital.DAO.DataBase;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -167,7 +169,7 @@ public class HospitalController implements Initializable {
 
     private void openAdminPortal() {
         try {
-            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("AdminMainForm-view.fxml")));
+            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/com/javafx/hospital/Views/AdminMainForm-view.fxml")));
             Stage stage = new Stage();
             stage.setScene(new Scene(root));
             stage.setTitle("Portal do Administrador");
@@ -184,7 +186,7 @@ public class HospitalController implements Initializable {
 
     private void openDataBaseSetting() {
         try {
-            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("DataBaseSetteing-view.fxml")));
+            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/com/javafx/hospital/Views/DataBaseSetteing-view.fxml")));
             Stage stage = new Stage();
             stage.setScene(new Scene(root));
             stage.setTitle("DataBase Setting");
@@ -199,7 +201,7 @@ public class HospitalController implements Initializable {
 
     private void openMedicoPortal() {
         try {
-            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("MedicoMainForm-view.fxml")));
+            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/com/javafx/hospital/Views/MedicoMainForm-view.fxml")));
             Stage stage = new Stage();
             stage.setScene(new Scene(root));
             stage.setTitle("Portal do Medico");

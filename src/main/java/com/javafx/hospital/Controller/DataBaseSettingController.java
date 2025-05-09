@@ -1,5 +1,6 @@
-package com.javafx.hospital;
+package com.javafx.hospital.Controller;
 
+import com.javafx.hospital.Alerts.AlertMessage;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;

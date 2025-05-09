@@ -29,7 +29,7 @@
             <children>
                 <BorderPane layoutX="305.0" layoutY="299.0" prefHeight="900.0" prefWidth="1440.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <left>
-                        <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="topPane" stylesheets="@Styles/MedicoMainForm.css" BorderPane.alignment="CENTER">
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="topPane" stylesheets="@../Styles/MedicoMainForm.css" BorderPane.alignment="CENTER">
                             <children>
                                 <FontAwesomeIconView fill="#2a5caa" glyphName="H_SQUARE" layoutX="70.0" layoutY="81.0" size="6em" AnchorPane.leftAnchor="65.0" AnchorPane.rightAnchor="65.0" AnchorPane.topAnchor="20.0" />
                                 <Label layoutX="48.0" layoutY="104.0" text="S.G.H Alpha3" AnchorPane.topAnchor="110.0">
@@ -37,7 +37,7 @@
                                         <Font name="System Bold" size="14.0" />
                                     </font>
                                 </Label>
-                        <Button fx:id="admin_medicos1" alignment="TOP_LEFT" layoutX="20.0" layoutY="298.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="160.0" stylesheets="@Styles/AdminMainForm.css" text="Principal" translateY="-20.0">
+                        <Button fx:id="admin_medicos1" alignment="TOP_LEFT" layoutX="20.0" layoutY="298.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="160.0" stylesheets="@../Styles/AdminMainForm.css" text="Principal" translateY="-20.0">
                            <graphic>
                               <FontAwesomeIconView glyphName="HOME" size="2.5em" styleClass="font" />
                            </graphic>
@@ -49,7 +49,7 @@
                               <String fx:value="radius" />
                            </styleClass>
                         </Button>
-                                <Button fx:id="admin_medicos" alignment="TOP_LEFT" layoutX="20.0" layoutY="378.0" mnemonicParsing="false" prefHeight="40.0" stylesheets="@Styles/AdminMainForm.css" text="Consulta" translateY="-20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="378.0">
+                                <Button fx:id="admin_medicos" alignment="TOP_LEFT" layoutX="20.0" layoutY="378.0" mnemonicParsing="false" prefHeight="40.0" stylesheets="@../Styles/AdminMainForm.css" text="Consulta" translateY="-20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="378.0">
                                     <graphic>
                                         <FontAwesomeIconView glyphName="STETHOSCOPE" size="2.5em" styleClass="font" />
                                     </graphic>
@@ -61,7 +61,7 @@
                                         <String fx:value="radius" />
                                     </styleClass>
                                 </Button>
-                                <Button fx:id="admin_pacientes" alignment="TOP_LEFT" layoutX="20.0" layoutY="458.0" mnemonicParsing="false" prefHeight="40.0" stylesheets="@Styles/AdminMainForm.css" text="Pacientes" translateY="-20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="458.0">
+                                <Button fx:id="admin_pacientes" alignment="TOP_LEFT" layoutX="20.0" layoutY="458.0" mnemonicParsing="false" prefHeight="40.0" stylesheets="@../Styles/AdminMainForm.css" text="Pacientes" translateY="-20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="458.0">
                                     <graphic>
                                         <FontAwesomeIconView glyphName="USER" size="2.5em" styleClass="font" />
                                     </graphic>
@@ -73,7 +73,7 @@
                                         <String fx:value="radius" />
                                     </styleClass>
                                 </Button>
-                                <Button fx:id="admin_registar" alignment="TOP_LEFT" layoutX="21.0" layoutY="538.0" mnemonicParsing="false" prefHeight="40.0" stylesheets="@Styles/AdminMainForm.css" text="Registar" translateY="-20.0" AnchorPane.leftAnchor="21.0" AnchorPane.rightAnchor="19.0" AnchorPane.topAnchor="538.0">
+                                <Button fx:id="admin_registar" alignment="TOP_LEFT" layoutX="21.0" layoutY="538.0" mnemonicParsing="false" prefHeight="40.0" stylesheets="@../Styles/AdminMainForm.css" text="Registar" translateY="-20.0" AnchorPane.leftAnchor="21.0" AnchorPane.rightAnchor="19.0" AnchorPane.topAnchor="538.0">
                                     <graphic>
                                         <FontAwesomeIconView glyphName="USER_PLUS" size="2.5em" styleClass="font" />
                                     </graphic>
@@ -85,7 +85,7 @@
                                         <String fx:value="radius" />
                                     </styleClass>
                                 </Button>
-                                <Button fx:id="admin_relatorio" alignment="TOP_LEFT" layoutX="20.0" layoutY="618.0" mnemonicParsing="false" prefHeight="40.0" stylesheets="@Styles/AdminMainForm.css" text="Relatórios" translateY="-20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="618.0">
+                                <Button fx:id="admin_relatorio" alignment="TOP_LEFT" layoutX="20.0" layoutY="618.0" mnemonicParsing="false" prefHeight="40.0" stylesheets="@../Styles/AdminMainForm.css" text="Relatórios" translateY="-20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="618.0">
                                     <graphic>
                                         <FontAwesomeIconView glyphName="FILES_ALT" size="2.5em" styleClass="font" />
                                     </graphic>
@@ -97,7 +97,7 @@
                                         <String fx:value="radius" />
                                     </styleClass>
                                 </Button>
-                                <Button fx:id="admin_conta" alignment="TOP_LEFT" layoutX="20.0" layoutY="698.0" mnemonicParsing="false" prefHeight="40.0" stylesheets="@Styles/AdminMainForm.css" text="Conta" translateY="-20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="698.0">
+                                <Button fx:id="admin_conta" alignment="TOP_LEFT" layoutX="20.0" layoutY="698.0" mnemonicParsing="false" prefHeight="40.0" stylesheets="@../Styles/AdminMainForm.css" text="Conta" translateY="-20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="698.0">
                                     <graphic>
                                         <FontAwesomeIconView glyphName="GEAR" size="2.5em" styleClass="font" />
                                     </graphic>
@@ -109,7 +109,7 @@
                                         <String fx:value="radius" />
                                     </styleClass>
                                 </Button>
-                                <Button fx:id="admin_sair" alignment="TOP_LEFT" layoutX="20.0" layoutY="763.0" mnemonicParsing="false" prefHeight="40.0" stylesheets="@Styles/AdminMainForm.css" text="Sair" AnchorPane.bottomAnchor="45.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
+                                <Button fx:id="admin_sair" alignment="TOP_LEFT" layoutX="20.0" layoutY="763.0" mnemonicParsing="false" prefHeight="40.0" stylesheets="@../Styles/AdminMainForm.css" text="Sair" AnchorPane.bottomAnchor="45.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
                                     <graphic>
                                         <FontAwesomeIconView fill="WHITE" glyphName="SIGN_OUT" size="2.5em" />
                                     </graphic>
@@ -125,7 +125,7 @@
                         </AnchorPane>
                     </left>
                     <center>
-                        <AnchorPane fx:id="admin_main_form" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #F5F5F5;" styleClass="white-bg" stylesheets="@Styles/MedicoMainForm.css" BorderPane.alignment="CENTER">
+                        <AnchorPane fx:id="admin_main_form" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #F5F5F5;" styleClass="white-bg" stylesheets="@../Styles/MedicoMainForm.css" BorderPane.alignment="CENTER">
                             <children>
                                 <AnchorPane fx:id="admin_dashboard_form" prefHeight="886.0" prefWidth="1505.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
@@ -179,7 +179,7 @@
                                   <RowConstraints maxHeight="713.0" minHeight="10.0" prefHeight="572.0" vgrow="SOMETIMES" />
                                 </rowConstraints>
                                  <children>
-                                    <AnchorPane layoutX="10.0" layoutY="280.0" prefHeight="424.0" prefWidth="521.0" stylesheets="@Styles/MedicoMainForm.css">
+                                    <AnchorPane layoutX="10.0" layoutY="280.0" prefHeight="424.0" prefWidth="521.0" stylesheets="@../Styles/MedicoMainForm.css">
                                        <styleClass>
                                           <String fx:value="white-bg" />
                                           <String fx:value="radius" />
@@ -228,7 +228,7 @@
                                                       <Font name="System Bold" size="15.0" />
                                                    </font>
                                                 </Label>
-                                                <Button alignment="CENTER" contentDisplay="CENTER" layoutX="318.0" layoutY="13.0" mnemonicParsing="false" styleClass="btn-edit" stylesheets="@Styles/MedicoMainForm.css">
+                                                <Button alignment="CENTER" contentDisplay="CENTER" layoutX="318.0" layoutY="13.0" mnemonicParsing="false" styleClass="btn-edit" stylesheets="@../Styles/MedicoMainForm.css">
                                                    <graphic>
                                                       <FontAwesomeIconView glyphName="EDIT" size="1.5em" styleClass="edit-font" textAlignment="CENTER" />
                                                    </graphic>
@@ -279,21 +279,21 @@
                                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                 </rowConstraints>
                                  <children>
-                                    <AnchorPane prefHeight="424.0" prefWidth="521.0" stylesheets="@Styles/MedicoMainForm.css">
+                                    <AnchorPane prefHeight="424.0" prefWidth="521.0" stylesheets="@../Styles/MedicoMainForm.css">
                                        <styleClass>
                                           <String fx:value="white-bg" />
                                           <String fx:value="radius" />
                                           <String fx:value="shadow" />
                                        </styleClass>
                                     </AnchorPane>
-                                    <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="136.0" prefWidth="338.0" stylesheets="@Styles/MedicoMainForm.css" GridPane.columnIndex="1">
+                                    <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="136.0" prefWidth="338.0" stylesheets="@../Styles/MedicoMainForm.css" GridPane.columnIndex="1">
                                        <styleClass>
                                           <String fx:value="white-bg" />
                                           <String fx:value="radius" />
                                           <String fx:value="shadow" />
                                        </styleClass>
                                     </AnchorPane>
-                                    <AnchorPane layoutX="371.0" layoutY="10.0" prefHeight="424.0" prefWidth="521.0" stylesheets="@Styles/MedicoMainForm.css" GridPane.columnIndex="2">
+                                    <AnchorPane layoutX="371.0" layoutY="10.0" prefHeight="424.0" prefWidth="521.0" stylesheets="@../Styles/MedicoMainForm.css" GridPane.columnIndex="2">
                                        <styleClass>
                                           <String fx:value="white-bg" />
                                           <String fx:value="radius" />
@@ -305,7 +305,7 @@
                            </children></AnchorPane>
                                 <AnchorPane fx:id="admin_pacientes_form" layoutX="10.0" layoutY="10.0" prefHeight="886.0" prefWidth="1505.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                     <children>
-                                        <AnchorPane layoutX="80.0" layoutY="160.0" prefHeight="200.0" prefWidth="200.0" stylesheets="@Styles/AdminMainForm.css" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="15.0">
+                                        <AnchorPane layoutX="80.0" layoutY="160.0" prefHeight="200.0" prefWidth="200.0" stylesheets="@../Styles/AdminMainForm.css" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="15.0">
                                             <styleClass>
                                                 <String fx:value="white-bg" />
                                                 <String fx:value="border" />
@@ -321,7 +321,7 @@
                                                         <String fx:value="header-1" />
                                                     </styleClass>
                                                 </Label>
-                                                <TableView fx:id="admin_pacie_table" layoutX="2.0" layoutY="75.0" prefHeight="746.0" prefWidth="1453.0" stylesheets="@Styles/AdminMainForm.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="74.0">
+                                                <TableView fx:id="admin_pacie_table" layoutX="2.0" layoutY="75.0" prefHeight="746.0" prefWidth="1453.0" stylesheets="@../Styles/AdminMainForm.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="74.0">
                                                     <columns>
                                                         <TableColumn fx:id="admin_pacie_table_nome" prefWidth="128.0" text="Nome" />
                                                         <TableColumn fx:id="admin_pacie_table_Sexo" prefWidth="176.0" text="Sexo" />
@@ -335,14 +335,14 @@
                                                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                                                     </columnResizePolicy>
                                                 </TableView>
-                                                <TextField fx:id="admin_label_pacientes" layoutX="505.0" layoutY="13.0" prefHeight="24.0" prefWidth="446.0" promptText="Pesquisar" stylesheets="@Styles/AdminMainForm.css" AnchorPane.topAnchor="15.0">
+                                                <TextField fx:id="admin_label_pacientes" layoutX="505.0" layoutY="13.0" prefHeight="24.0" prefWidth="446.0" promptText="Pesquisar" stylesheets="@../Styles/AdminMainForm.css" AnchorPane.topAnchor="15.0">
                                                     <styleClass>
                                                         <String fx:value="textfield-1" />
                                                         <String fx:value="white-bg" />
                                                         <String fx:value="radius-2" />
                                                     </styleClass>
                                                 </TextField>
-                                                <Button fx:id="admin_btn_pacientes" layoutX="951.0" layoutY="14.0" mnemonicParsing="false" stylesheets="@Styles/AdminMainForm.css" AnchorPane.topAnchor="15.0">
+                                                <Button fx:id="admin_btn_pacientes" layoutX="951.0" layoutY="14.0" mnemonicParsing="false" stylesheets="@../Styles/AdminMainForm.css" AnchorPane.topAnchor="15.0">
                                                     <graphic>
                                                         <FontAwesomeIconView glyphName="SEARCH" styleClass="font" />
                                                     </graphic>
@@ -353,7 +353,7 @@
                                                         <String fx:value="search" />
                                                     </styleClass>
                                                 </Button>
-                                                <ComboBox fx:id="admin_filtro_pacientes" layoutX="1291.0" layoutY="15.0" prefHeight="24.0" prefWidth="207.0" promptText="FILTRAR" stylesheets="@Styles/AdminMainForm.css" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="14.0">
+                                                <ComboBox fx:id="admin_filtro_pacientes" layoutX="1291.0" layoutY="15.0" prefHeight="24.0" prefWidth="207.0" promptText="FILTRAR" stylesheets="@../Styles/AdminMainForm.css" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="14.0">
                                                     <styleClass>
                                                         <String fx:value="white-bg" />
                                                         <String fx:value="textfield-1" />
@@ -366,7 +366,7 @@
                                 </AnchorPane>
                                 <AnchorPane fx:id="admin_registar_form" prefHeight="906.0" prefWidth="1525.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                     <children>
-                                        <AnchorPane layoutX="80.0" layoutY="160.0" prefHeight="200.0" prefWidth="200.0" stylesheets="@Styles/AdminMainForm.css" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="15.0">
+                                        <AnchorPane layoutX="80.0" layoutY="160.0" prefHeight="200.0" prefWidth="200.0" stylesheets="@../Styles/AdminMainForm.css" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="15.0">
                                             <styleClass>
                                                 <String fx:value="white-bg" />
                                                 <String fx:value="border" />
@@ -388,7 +388,7 @@
                                 </AnchorPane>
                                 <AnchorPane fx:id="admin_relatorios_form" layoutX="10.0" layoutY="10.0" prefHeight="916.0" prefWidth="1535.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                     <children>
-                                        <AnchorPane layoutX="80.0" layoutY="160.0" prefHeight="200.0" prefWidth="200.0" stylesheets="@Styles/AdminMainForm.css" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="15.0">
+                                        <AnchorPane layoutX="80.0" layoutY="160.0" prefHeight="200.0" prefWidth="200.0" stylesheets="@../Styles/AdminMainForm.css" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="15.0">
                                             <styleClass>
                                                 <String fx:value="white-bg" />
                                                 <String fx:value="border" />
@@ -554,7 +554,7 @@
                                 </AnchorPane>
                                 <AnchorPane fx:id="admin_conta_form" layoutX="10.0" layoutY="10.0" prefHeight="926.0" prefWidth="1545.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                     <children>
-                                        <AnchorPane layoutX="80.0" layoutY="160.0" prefHeight="200.0" prefWidth="200.0" stylesheets="@Styles/AdminMainForm.css" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="15.0">
+                                        <AnchorPane layoutX="80.0" layoutY="160.0" prefHeight="200.0" prefWidth="200.0" stylesheets="@../Styles/AdminMainForm.css" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="15.0">
                                             <styleClass>
                                                 <String fx:value="white-bg" />
                                                 <String fx:value="border" />
@@ -725,7 +725,7 @@
                         </AnchorPane>
                     </center>
                     <top>
-                        <AnchorPane prefHeight="40.0" prefWidth="200.0" styleClass="topPane" stylesheets="@Styles/AdminMainForm.css" BorderPane.alignment="CENTER">
+                        <AnchorPane prefHeight="40.0" prefWidth="200.0" styleClass="topPane" stylesheets="@../Styles/AdminMainForm.css" BorderPane.alignment="CENTER">
                             <children>
                                 <Label fx:id="admin_date" layoutX="1396.0" layoutY="13.0" AnchorPane.bottomAnchor="11.0" AnchorPane.rightAnchor="265.0" AnchorPane.topAnchor="13.0" />
                                 <Label fx:id="admin_form_text" layoutX="161.0" layoutY="12.0">

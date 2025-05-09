@@ -8,9 +8,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.StackPane?>
 
-<StackPane fx:id="DBform" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.javafx.hospital.DataBaseSettingController">
+<StackPane fx:id="DBform" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.javafx.hospital.Controller.DataBaseSettingController">
    <children>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" stylesheets="@Styles/AdminMainForm.css">
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" stylesheets="@../Styles/AdminMainForm.css">
          <children>
             <TextField fx:id="DBUrl" layoutX="20.0" layoutY="90.0" prefWidth="400.0" promptText="Set the DataBase URL">
                <styleClass>

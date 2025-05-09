@@ -1,4 +1,4 @@
-package com.javafx.hospital;
+package com.javafx.hospital.Controller;
 
 import javafx.fxml.Initializable;
 

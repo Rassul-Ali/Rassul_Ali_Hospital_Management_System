@@ -15,17 +15,17 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="720.0" stylesheets="@Styles/login.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.javafx.hospital.HospitalController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="720.0" stylesheets="@../Styles/login.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.javafx.hospital.Controller.HospitalController">
    <children>
       <StackPane fx:id="main_form" prefHeight="150.0" prefWidth="200.0">
          <children>
             <BorderPane fx:id="login_form" prefHeight="200.0" prefWidth="200.0">
                <left>
-                  <AnchorPane prefWidth="220.0" styleClass="leftAnchor" stylesheets="@Styles/login.css" BorderPane.alignment="CENTER">
+                  <AnchorPane prefWidth="220.0" styleClass="leftAnchor" stylesheets="@../Styles/login.css" BorderPane.alignment="CENTER">
                      <children>
                         <FontAwesomeIconView fill="WHITE" glyphName="USER" layoutX="68.0" layoutY="137.0" size="9em" AnchorPane.leftAnchor="68.0" AnchorPane.rightAnchor="68.0" AnchorPane.topAnchor="40.0" />
                         <FontAwesomeIconView fill="WHITE" glyphName="H_SQUARE" layoutX="40.0" layoutY="420.0" size="10em" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="58.0" AnchorPane.rightAnchor="58.0" />
-                        <Label layoutX="81.0" layoutY="167.0" styleClass="topPaneText" stylesheets="@Styles/login.css" text="LOGIN" textFill="WHITE">
+                        <Label layoutX="81.0" layoutY="167.0" styleClass="topPaneText" stylesheets="@../Styles/login.css" text="LOGIN" textFill="WHITE">
                            <font>
                               <Font size="15.0" />
                            </font>
@@ -34,11 +34,11 @@
                   </AnchorPane>
                </left>
                <center>
-                  <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="centerAnchor" stylesheets="@Styles/login.css" BorderPane.alignment="CENTER">
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="centerAnchor" stylesheets="@../Styles/login.css" BorderPane.alignment="CENTER">
                      <children>
-                        <Pane layoutX="120.0" layoutY="40.0" prefHeight="45.0" prefWidth="200.0" styleClass="topPane" stylesheets="@Styles/login.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <Pane layoutX="120.0" layoutY="40.0" prefHeight="45.0" prefWidth="200.0" styleClass="topPane" stylesheets="@../Styles/login.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
-                              <Label layoutX="14.0" layoutY="13.0" styleClass="topPaneText" stylesheets="@Styles/login.css" text="Sistema de Gestao Hospitalar Alpha3">
+                              <Label layoutX="14.0" layoutY="13.0" styleClass="topPaneText" stylesheets="@../Styles/login.css" text="Sistema de Gestao Hospitalar Alpha3">
                                  <font>
                                     <Font size="15.0" />
                                  </font>
@@ -48,26 +48,26 @@
                               <Insets left="10.0" />
                            </padding>
                         </Pane>
-                        <TextField fx:id="login_username" layoutX="64.0" layoutY="126.0" prefHeight="40.0" prefWidth="350.0" promptText="NOME DO USUARIO:" stylesheets="@Styles/login.css" AnchorPane.leftAnchor="64.0" AnchorPane.rightAnchor="64.0" AnchorPane.topAnchor="130.0">
+                        <TextField fx:id="login_username" layoutX="64.0" layoutY="126.0" prefHeight="40.0" prefWidth="350.0" promptText="NOME DO USUARIO:" stylesheets="@../Styles/login.css" AnchorPane.leftAnchor="64.0" AnchorPane.rightAnchor="64.0" AnchorPane.topAnchor="130.0">
                            <styleClass>
                               <String fx:value="textfield-1" />
                               <String fx:value="white-bg" />
                            </styleClass>
                         </TextField>
-                        <PasswordField fx:id="login_password" layoutX="64.0" layoutY="205.0" prefHeight="40.0" promptText="PASSWORD" stylesheets="@Styles/login.css" AnchorPane.leftAnchor="64.0" AnchorPane.rightAnchor="64.0" AnchorPane.topAnchor="205.0">
+                        <PasswordField fx:id="login_password" layoutX="64.0" layoutY="205.0" prefHeight="40.0" promptText="PASSWORD" stylesheets="@../Styles/login.css" AnchorPane.leftAnchor="64.0" AnchorPane.rightAnchor="64.0" AnchorPane.topAnchor="205.0">
                            <styleClass>
                               <String fx:value="textfield-1" />
                               <String fx:value="white-bg" />
                            </styleClass>
                         </PasswordField>
-                        <TextField fx:id="login_showPassword" layoutX="64.0" layoutY="205.0" prefHeight="40.0" prefWidth="350.0" promptText="PASSWORD:" stylesheets="@Styles/login.css" visible="false" AnchorPane.leftAnchor="64.0" AnchorPane.rightAnchor="64.0">
+                        <TextField fx:id="login_showPassword" layoutX="64.0" layoutY="205.0" prefHeight="40.0" prefWidth="350.0" promptText="PASSWORD:" stylesheets="@../Styles/login.css" visible="false" AnchorPane.leftAnchor="64.0" AnchorPane.rightAnchor="64.0">
                            <styleClass>
                               <String fx:value="textfield-1" />
                               <String fx:value="white-bg" />
                            </styleClass>
                         </TextField>
-                        <CheckBox fx:id="login_checkBox" layoutX="62.0" layoutY="256.0" mnemonicParsing="false" onAction="#loginShowPassword" stylesheets="@Styles/login.css" text="Mostrar Password" AnchorPane.leftAnchor="62.0" AnchorPane.topAnchor="260.0" />
-                        <Button fx:id="login_loginBtn" layoutX="64.0" layoutY="324.0" mnemonicParsing="false" onAction="#loginAccount" prefHeight="40.0" styleClass="btn-1" stylesheets="@Styles/login.css" text="Login" AnchorPane.leftAnchor="64.0" AnchorPane.rightAnchor="64.0" />
+                        <CheckBox fx:id="login_checkBox" layoutX="62.0" layoutY="256.0" mnemonicParsing="false" onAction="#loginShowPassword" stylesheets="@../Styles/login.css" text="Mostrar Password" AnchorPane.leftAnchor="62.0" AnchorPane.topAnchor="260.0" />
+                        <Button fx:id="login_loginBtn" layoutX="64.0" layoutY="324.0" mnemonicParsing="false" onAction="#loginAccount" prefHeight="40.0" styleClass="btn-1" stylesheets="@../Styles/login.css" text="Login" AnchorPane.leftAnchor="64.0" AnchorPane.rightAnchor="64.0" />
                         <Text layoutX="288.0" layoutY="470.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Powered by Alpha3" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="10.0" />
                      </children>
                   </AnchorPane>

@@ -1,4 +1,4 @@
-package com.javafx.hospital;
+package com.javafx.hospital.Alerts;
 
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;

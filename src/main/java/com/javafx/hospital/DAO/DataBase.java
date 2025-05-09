@@ -1,7 +1,6 @@
-package com.javafx.hospital;
+package com.javafx.hospital.DAO;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.sql.Connection;

@@ -8,4 +8,14 @@ module com.javafx.hospital {
 
     opens com.javafx.hospital to javafx.fxml;
     exports com.javafx.hospital;
+    exports com.javafx.hospital.Controller;
+    opens com.javafx.hospital.Controller to javafx.fxml;
+    exports com.javafx.hospital.DAO;
+    opens com.javafx.hospital.DAO to javafx.fxml;
+    exports com.javafx.hospital.Alerts;
+    opens com.javafx.hospital.Alerts to javafx.fxml;
+    exports com.javafx.hospital.Main;
+    opens com.javafx.hospital.Main to javafx.fxml;
+    exports com.javafx.hospital.Model;
+    opens com.javafx.hospital.Model to javafx.fxml;
 }
