@@ -10,7 +10,7 @@ import java.io.IOException;
 public class Tadmin extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HospitalApplication.class.getResource("MedicoMainForm-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HospitalApplication.class.getResource("/com/javafx/hospital/Views/MedicoMainForm-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Portal do Medico");
         stage.setScene(scene);

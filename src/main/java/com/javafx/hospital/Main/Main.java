@@ -1,6 +1,7 @@
 package com.javafx.hospital.Main;
 
 import com.javafx.hospital.Model.Users;
+import javafx.application.Application;
 import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.engine.util.JRLoader;
 
@@ -8,8 +9,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Main {
-    public static void main(String[] args) throws JRException {
-        JasperReport jasperReport = (JasperReport) JRLoader.loadObjectFromFile("src/main/resources/com/javafx/hospital/JasperReport/Blank_A4.jasper");
+    public static void main(String[] args)  {
+        /*JasperReport jasperReport = (JasperReport) JRLoader.loadObjectFromFile("src/main/resources/com/javafx/hospital/JasperReport/Blank_A4.jasper");
         Map<String, Object> fullname = new HashMap<String, Object>();
 
         fullname.put("name", Users.getFullname()[0]);
@@ -17,7 +18,7 @@ public class Main {
         JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, fullname, new JREmptyDataSource());
         JasperExportManager.exportReportToPdfFile(jasperPrint, "/media/alpha3/Armazenamento/output.pdf");
 
-        /*File url = new File("src/main/java/com/javafx/hospital/DBfiles/URL.dat");
+        File url = new File("src/main/java/com/javafx/hospital/DBfiles/URL.dat");
         File user = new File("src/main/java/com/javafx/hospital/DBfiles/USER.dat");
         File password = new File("src/main/java/com/javafx/hospital/DBfiles/PASSWORD.dat");
 
@@ -45,6 +46,7 @@ public class Main {
         }
 
         System.out.println(u + u1 + p);*/
+        HospitalApplication.main(args);
 
     }
 }
